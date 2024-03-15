@@ -52,7 +52,7 @@ export default function MenuSlider() {
   };
 
   return (
-    <div>
+    <div className={styles.MenuSliderParent}>
       <div className={styles.MenuSlideWrapper}>
         <h4 className={styles.caption}>メニュー</h4>
         <Swiper
@@ -76,8 +76,8 @@ export default function MenuSlider() {
               <Link href={src.path}>
                 <Image
                   src={src.imgUrl}
-                  width={1920}
-                  height={900}
+                  width={500}
+                  height={280}
                   alt="Slider Image"
                   className={styles.slideImage}
                 />

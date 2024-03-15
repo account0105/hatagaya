@@ -1,12 +1,15 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: rgb(16, 16, 16);
   color: white;
 }
 
 li {
   list-style-type: none;
+}
+
+body {
+  font-family: 'Shippori Mincho', serif;
 }
 
 

@@ -1,4 +1,6 @@
 import "./globals.css";
+import Head from 'next/head';
+
 import { Shippori_Mincho } from "next/font/google";
 
 const ShipporiMincho = Shippori_Mincho({weight:"400",subsets:["latin"]})
@@ -10,7 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ja">
-      <body className={ShipporiMincho.className}>{children}</body>
+        <Head>
+        <style>
+        </style>
+      </Head>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,5 +1,9 @@
+.MenuSliderParent{
+  background-color: #171717;
+}
+
 .MenuSlideWrapper {
-  margin : 34px 0 100px 0;
+  padding : 34px 0 45px 0;
 }
 
 

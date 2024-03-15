@@ -5,6 +5,7 @@
 .slideImage {
   width: 100vw;
   height: auto;
+  vertical-align: bottom;
 }
 
 .logo {
