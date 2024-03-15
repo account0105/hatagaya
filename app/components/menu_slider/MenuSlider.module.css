@@ -1,0 +1,62 @@
+.MenuSlideWrapper {
+  margin : 34px 0 100px 0;
+}
+
+
+.slideWrapper {
+  padding-left: 10vw; /* スライダー左の余白 */
+  padding-right: 20px; /* スライダー右の余白 */
+}
+
+.swiper-slide {
+  /* スライド間のスペースをパーセンテージで指定 */
+  padding-right: 2%; /* 右側のパディングでスペースを作る */
+  box-sizing: border-box; /* パディングを要素の寸法に含める */
+}
+
+.firstSlideImage {
+  width: 100%;
+  height: auto;
+}
+
+.slideImage {
+  width: 100%;
+  height: auto;
+}
+
+.slideImage:hover {
+  opacity: 0.7;
+}
+
+.caption{
+  font-weight: 100;
+  width: 80%;
+  font-size: 10px;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 28px;
+}
+
+.menu_title {
+  margin: 7px 0 0 5px;
+  font-size: 10px;
+
+}
+
+.menu_title_link {
+  display: flex;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+@media screen and (min-width: 420px) {
+
+}
+
+@media screen and (min-width: 780px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}

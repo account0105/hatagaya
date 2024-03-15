@@ -1,0 +1,60 @@
+.header {
+  padding: 5px 0;
+  background-color: rgb(16, 16, 16);
+  width: 100%;
+  height: 40px;
+  color: white;
+  font-family: "Shippori Mincho", serif;
+  font-size: 10px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+.header nav {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.navList {
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: cover;
+}
+
+@media screen and (min-width: 780px) {
+  .navList {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .header {
+    padding: 5px 0;
+    background-color: rgb(16, 16, 16);
+    width: 100%;
+    height: 64px;
+    color: white;
+    font-family: "Shippori Mincho", serif;
+    font-size: 10px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+  }
+
+  .navList {
+    font-size: 14px;
+  }
+}

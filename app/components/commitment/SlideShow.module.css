@@ -1,0 +1,41 @@
+.slideWrapper {
+  max-width: 100%;
+}
+
+.slideImage {
+  width: 100vw;
+  height: auto;
+}
+
+.logo {
+  width: 165px;
+  height: auto;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 99999;
+  background-color: rgba(250, 235, 215, 0);
+}
+
+@media screen and (min-width: 420px) {
+  .logo {
+    top: 37%;
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .logo {
+    top: 40%;
+    width: 240px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo {
+    top: 45%;
+    width: 300px;
+  }
+}
