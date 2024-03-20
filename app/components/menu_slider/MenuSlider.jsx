@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./MenuSlider.module.css";
 import Image from "next/image";
-
 
 import { FreeMode, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import 'swiper/css/free-mode';
+import "swiper/css/free-mode";
 import Link from "next/link";
 
 const images = [
@@ -36,14 +35,23 @@ const images = [
 ];
 
 export default function MenuSlider() {
-  // ブレイクポイントに基づいて1つのスライドに表示するスライドの数を指定
+
+  const swiperRef = useRef(null);
+
+  const updateSwiper = () => {
+    if(swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.update();
+    }
+  }
+  
+
   const slideSettings = {
     0: {
       slidesPerView: 3.2,
-      spaceBetween: 10
+      spaceBetween: 10,
     },
-    780:{
-      spaceBetween:15
+    780: {
+      spaceBetween: 15,
     },
     1024: {
       slidesPerView: 4.2,
@@ -56,10 +64,10 @@ export default function MenuSlider() {
       <div className={styles.MenuSlideWrapper}>
         <h4 className={styles.caption}>メニュー</h4>
         <Swiper
-          modules={[Navigation, Pagination,FreeMode]}
+          modules={[Navigation, Pagination, FreeMode]}
           breakpoints={slideSettings}
-          slidesPerView={"auto"} 
-          centeredSlides={true} 
+          slidesPerView={"auto"}
+          centeredSlides={true}
           loop={false}
           freeMode={true}
           speed={1000}
@@ -71,7 +79,6 @@ export default function MenuSlider() {
           className={styles.slideWrapper}
         >
           {images.map((src, index) => (
-
             <SwiperSlide key={index}>
               <Link href={src.path}>
                 <Image
@@ -80,6 +87,7 @@ export default function MenuSlider() {
                   height={280}
                   alt="Slider Image"
                   className={styles.slideImage}
+                  onLoad={updateSwiper}
                 />
               </Link>
               <div className={styles.menu_title}>
