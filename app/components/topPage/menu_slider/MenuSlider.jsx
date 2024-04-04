@@ -36,7 +36,7 @@ const images = [
 export default function MenuSlider() {
     const slideSettings = {
         0: {
-            slidesPerView: 3.1,
+            slidesPerView: 1.6,
             spaceBetween: 12,
         },
         600: {

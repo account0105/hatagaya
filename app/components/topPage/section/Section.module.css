@@ -29,13 +29,13 @@
 
 .title {
     font-weight: 100;
-    font-size: 14px;
+    font-size: 18px;
     background-color: #1e1e1e;
 }
 
 .text {
     font-weight: 100;
-    font-size: 10px;
+    font-size: 14px;
     background-color: #1e1e1e;
 }
 
@@ -52,6 +52,12 @@
 .resvTitle {
     background-color: #1e1e1e;
     margin: 0 10px 0 0;
+    font-size: 12px;
+}
+
+.link a {
+    font-size: 12px;
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 600px) {
@@ -84,5 +90,13 @@
 
     .reservation {
         font-size: 12px;
+    }
+
+    .resvTitle {
+        font-size: 16px;
+    }
+
+    .link a {
+        font-size: 16px;
     }
 }

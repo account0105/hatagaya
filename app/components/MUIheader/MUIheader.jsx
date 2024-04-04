@@ -79,7 +79,7 @@ function ResponsiveAppBar() {
                 top: 0,
                 zIndex: 10,
                 height: {
-                    xs: 45,
+                    xs: 60,
                     sm: 65,
                 },
                 display: "flex",
@@ -94,7 +94,7 @@ function ResponsiveAppBar() {
                     top: 0,
                     zIndex: 10,
                     height: {
-                        xs: 45,
+                        xs: 60,
                         sm: 65,
                     },
                     width: "100%",
@@ -102,7 +102,10 @@ function ResponsiveAppBar() {
                     alignItems: "center",
                 }}
             >
-                <Toolbar disableGutters sx={{ gap: "5px" }}>
+                <Toolbar
+                    disableGutters
+                    sx={{ gap: "5px", display: "flex", alignItems: "center" }}
+                >
                     {/* デスクトップアイコン */}
                     <Link href="/" passHref>
                         <Typography
@@ -140,6 +143,7 @@ function ResponsiveAppBar() {
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
                             color="inherit"
+                            sx={{ width: "60px" }}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -177,6 +181,8 @@ function ResponsiveAppBar() {
                                             sx={{
                                                 fontFamily:
                                                     "Shippori Mincho, serif",
+                                                fontSize: "26px",
+                                                padding: "20px",
                                             }}
                                         >
                                             {page.name}
@@ -289,7 +295,6 @@ function ResponsiveAppBar() {
                                     >
                                         <Link href={data.url} passHref>
                                             <Typography
-                                               
                                                 sx={{
                                                     fontSize: "18px",
                                                     fontFamily: `"Shippori Mincho", serif`,
