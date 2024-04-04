@@ -4,6 +4,8 @@ import React from "react";
 import "./style.css";
 
 const Imfomation = () => {
+
+
     return (
         <div style={{ width: "100%" }}>
             <div className="informationBox">

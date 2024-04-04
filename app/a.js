@@ -1,0 +1,1 @@
+console.log(process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN);
