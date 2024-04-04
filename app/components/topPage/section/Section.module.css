@@ -1,0 +1,88 @@
+.sectionWrap {
+    background-color: #1e1e1e;
+    padding: 40px 0 30px 0;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.sectionBox {
+    background-color: #1e1e1e;
+    width: 65vw;
+    max-width: 1300px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 28px 0;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.textBox {
+    width: 80%;
+    padding: 10px 0 0 10px;
+    background-color: #1e1e1e;
+}
+
+.title {
+    font-weight: 100;
+    font-size: 14px;
+    background-color: #1e1e1e;
+}
+
+.text {
+    font-weight: 100;
+    font-size: 10px;
+    background-color: #1e1e1e;
+}
+
+.reservation {
+    font-size: 8px;
+    font-weight: 100;
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content: space-between;
+    float: right;
+    margin: 0 10px 0 0;
+}
+
+.resvTitle {
+    background-color: #1e1e1e;
+    margin: 0 10px 0 0;
+}
+
+@media screen and (min-width: 600px) {
+    .sectionBox {
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+        padding: 45px 0;
+    }
+
+    .sectionBox:nth-child(2n) {
+        flex-direction: row-reverse;
+    }
+
+    .image {
+        width: 50%;
+        height: auto;
+    }
+    .textBox {
+        width: 40%;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .reservation {
+        font-size: 12px;
+    }
+}

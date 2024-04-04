@@ -53,13 +53,14 @@ const Section = () => {
       </section>
       <div className={styles.reservation}>
         <p className={styles.resvTitle}>ご予約はこちらから</p>
-        <Link href="https://tabelog.com/tokyo/A1318/A131807/13213734/">
+        <div className={styles.link}><Link href="https://tabelog.com/tokyo/A1318/A131807/13213734/">
           食べログ
         </Link><span>　|　</span>
         <Link href="https://www.hotpepper.jp/strJ001193236/">
           ホットペッパーグルメ
         </Link><span>　|　</span>
-        <Link href="https://restaurant.ikyu.com/123506">一休</Link>
+        <Link href="https://restaurant.ikyu.com/123506">一休</Link></div>
+        
       </div>
     </div>
   );

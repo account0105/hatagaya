@@ -1,21 +1,20 @@
-"use client";
-import Header from "./components/header/desktopHeader/Header";
-import { Shippori_Mincho } from "next/font/google";
-import BasicSlider from "./components/commitment/SlideShow";
-import MenuSlider from "./components/menu_slider/MenuSlider";
-import Section from "./components/section/Section.jsx"
-import ResponsiveAppBar from "./components/MUIheader/MUIheader"
+import Section from "./components/topPage/section/Section";
+import ResponsiveAppBar from "./components/MUIheader/MUIheader";
+import MenuSlider from "./components/topPage/menu_slider/MenuSlider"
+import SlideShow from "./components/topPage/commitment/SlideShow"
+import Map from "./components/map/Map";
 
-export default function Home() {
-  return (
-    <>
-      <div>
-        {/* <Header /> */}
-        <ResponsiveAppBar/>
-        <BasicSlider />
-        <MenuSlider />
-        <Section/>
-      </div>
-    </>
-  );
+
+export default async function Home() {
+    return (
+        <>
+            <div>
+                <ResponsiveAppBar />
+                <SlideShow/>
+                <MenuSlider/>
+                <Section />
+                <Map/>
+            </div>
+        </>
+    );
 }

@@ -1,0 +1,39 @@
+.title {
+    margin: 15px 0 15px 20px;
+    font-size:18px;
+}
+
+
+.image {
+    width: 80%;
+    height: auto;
+}
+
+.courseDetail {
+    font-size: 12px;
+}
+
+@media screen and (min-width: 600px) {
+    .title {
+        font-size:22px;
+    }
+    
+    .courseDetail {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .title {
+        font-size:24px;
+    }
+    .courseDetail {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .courseDetail {
+        font-size: 18px;
+    }
+}

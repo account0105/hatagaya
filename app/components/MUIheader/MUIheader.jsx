@@ -1,130 +1,311 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+"use client";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import Image from "next/image";
+import Link from "next/link";
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [
+    { name: "メニュー", path: "/menu" },
+    { name: "店舗情報", path: "/shop" },
+    { name: "お知らせ", path: "/news" },
+];
+const communities = [
+    {
+        name: "食べログ",
+        url: "https://tabelog.com/tokyo/A1318/A131807/13213734/",
+    },
+    {
+        name: "ホットペッパー",
+        url: "https://www.hotpepper.jp/strJ001193236/",
+    },
+    {
+        name: "一休",
+        url: "https://restaurant.ikyu.com/123506",
+    },
+    {
+        name: "UberEats",
+        url: "https://www.ubereats.com/store/%E7%84%BC%E8%82%89-%E3%81%AF%E3%81%9F%E3%81%8B%E3%82%84-yakiniku-hatagaya/cj5ppEE6Vj6sI01GWBEFUQ?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNSU4OCU5RCVFNSU4RSU5RiUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUp4YXlkcFQtY2lWOFIyenVuVkhWMXhwayUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzOC40MDE4OTA0JTJDJTIybG9uZ2l0dWRlJTIyJTNBMTQxLjA0NzUxNjYlN0Q%3D",
+    },
+    {
+        name: "出前館",
+        url: "https://demae-can.com/shop/menu/3098831",
+    },
+];
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
 
-  return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
+    // コミュニティ
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    return (
+        <AppBar
+            position="static"
             sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+                backgroundColor: "#161616",
+                position: "fixed",
+                top: 0,
+                zIndex: 10,
+                height: {
+                    xs: 45,
+                    sm: 65,
+                },
+                display: "flex",
+                alignItems: "center",
             }}
-          >
-            LOGO
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+        >
+            <Container
+                maxWidth="xl"
+                sx={{
+                    backgroundColor: "#161616",
+                    position: "fixed",
+                    top: 0,
+                    zIndex: 10,
+                    height: {
+                        xs: 45,
+                        sm: 65,
+                    },
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                }}
             >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
-        </Toolbar>
-      </Container>
-    </AppBar>
-  );
+                <Toolbar disableGutters sx={{ gap: "5px" }}>
+                    {/* デスクトップアイコン */}
+                    <Link href="/" passHref>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            href="#app-bar-with-responsive-menu"
+                            sx={{
+                                display: { xs: "none", sm: "flex" },
+                                fontWeight: 700,
+                                letterSpacing: ".3rem",
+                                color: "inherit",
+                                textDecoration: "none",
+                            }}
+                        >
+                            <Image
+                                src="/image/mobile-logo-removebg.png"
+                                width={35}
+                                height={35}
+                                alt="logo"
+                                property="true"
+                            ></Image>
+                        </Typography>
+                    </Link>
+                    {/* スマホメニューバー */}
+                    <Box
+                        sx={{
+                            flexGrow: 1,
+                            display: { xs: "flex", sm: "none" },
+                        }}
+                    >
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleOpenNavMenu}
+                            color="inherit"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorElNav}
+                            anchorOrigin={{
+                                vertical: "bottom",
+                                horizontal: "left",
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: "top",
+                                horizontal: "left",
+                            }}
+                            open={Boolean(anchorElNav)}
+                            onClose={handleCloseNavMenu}
+                            sx={{
+                                display: { xs: "block", sm: "none" },
+                                "& .MuiPaper-root": {
+                                    // MUIのPaperコンポーネントにスタイルを適用
+                                    backgroundColor: "#1D1D1D", // ここで背景色を設定
+                                },
+                                width: "100%",
+                            }}
+                        >
+                            {pages.map((page, index) => (
+                                <MenuItem
+                                    key={index}
+                                    onClick={handleCloseNavMenu}
+                                >
+                                    <Link href={page.path}>
+                                        <Typography
+                                            textAlign="center"
+                                            sx={{
+                                                fontFamily:
+                                                    "Shippori Mincho, serif",
+                                            }}
+                                        >
+                                            {page.name}
+                                        </Typography>
+                                    </Link>
+                                </MenuItem>
+                            ))}
+                        </Menu>
+                    </Box>
+                    {/* スマホアイコン */}{" "}
+                    <Link href="/" passHref>
+                        <Typography
+                            noWrap
+                            href="#app-bar-with-responsive-menu"
+                            sx={{
+                                display: { xs: "flex", sm: "none" },
+                                flexGrow: 1,
+                                fontWeight: 700,
+                                letterSpacing: ".3rem",
+                                color: "inherit",
+                                textDecoration: "none",
+                            }}
+                        >
+                            <Image
+                                src="/image/mobile-logo-removebg.png"
+                                width={35}
+                                height={35}
+                                alt="logo"
+                            ></Image>
+                        </Typography>
+                    </Link>
+                    {/* デスクトップメニューバー */}
+                    <Box
+                        sx={{
+                            flexGrow: 1,
+                            display: { xs: "none", sm: "flex" },
+                            justifyContent: "space-around",
+                            "& > :last-child": {
+                                marginRight: "0",
+                            },
+                            margin: " 0 0 0 50px",
+                        }}
+                    >
+                        {pages.map((page, index) => (
+                            <Button
+                                key={index}
+                                onClick={handleCloseNavMenu}
+                                sx={{
+                                    my: 2,
+                                    color: "white",
+                                    display: "block",
+                                    marginRight: "48px",
+                                }}
+                            >
+                                <Link href={page.path}>
+                                    <Typography
+                                        sx={{
+                                            fontFamily:
+                                                "Shippori Mincho, serif",
+                                            fontSize: "18px",
+                                        }}
+                                    >
+                                        {page.name}
+                                    </Typography>
+                                </Link>
+                            </Button>
+                        ))}
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                            <Button
+                                id="basic-button"
+                                aria-controls={open ? "basic-menu" : undefined}
+                                aria-haspopup="true"
+                                aria-expanded={open ? "true" : undefined}
+                                onClick={handleClick}
+                                sx={{
+                                    color: "white",
+                                    fontFamily: "Shippori Mincho, serif",
+                                    fontSize: "17px",
+                                    fontWeight: "100",
+                                }}
+                            >
+                                コミュニティ
+                            </Button>
+                            <Menu
+                                id="basic-menu"
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                MenuListProps={{
+                                    "aria-labelledby": "basic-button",
+                                }}
+                                sx={{
+                                    "& .MuiPaper-root": {
+                                        // MUIのPaperコンポーネントにスタイルを適用
+                                        backgroundColor: "#1D1D1D", // ここで背景色を設定
+                                    },
+                                    width: "100%",
+                                }}
+                            >
+                                {communities.map((data, index) => (
+                                    <MenuItem
+                                        onClick={handleClose}
+                                        key={index}
+                                        sx={{
+                                            "&:hover": {
+                                                opacity: "0.8",
+                                                transition: "0.1s",
+                                            },
+                                        }}
+                                    >
+                                        <Link href={data.url} passHref>
+                                            <Typography
+                                               
+                                                sx={{
+                                                    fontSize: "18px",
+                                                    fontFamily: `"Shippori Mincho", serif`,
+                                                }}
+                                            >
+                                                {data.name}
+                                            </Typography>
+                                        </Link>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </div>
+                    </Box>
+                </Toolbar>
+            </Container>
+        </AppBar>
+    );
 }
 export default ResponsiveAppBar;

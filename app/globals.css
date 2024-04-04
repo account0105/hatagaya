@@ -10,7 +10,16 @@ li {
 
 body {
   font-family: 'Shippori Mincho', serif;
+  font-weight:100
 }
+
+
+
+a {
+  text-decoration: none;
+  border: none;
+}
+
 
 
 

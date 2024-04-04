@@ -1,0 +1,53 @@
+.informationBox {
+    margin: 0 0 25px 0;
+}
+
+.image {
+    width: 150px;
+    height: auto;
+}
+
+.title {
+    display: flex;
+    padding: 0 0 50px 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gridBox {
+    background-color: #1d1d1d;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+@media screen and (min-width: 600px) {
+    .informationBox {
+        margin: 0 0 50px 0;
+    }
+
+    .image {
+        width: 230px;
+    }
+
+    .title {
+        padding: 0 0 75px 0;
+    }
+
+    .text {
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .image {
+        width: 270px;
+    }
+
+    .text {
+        font-size: 30px;
+    }
+}

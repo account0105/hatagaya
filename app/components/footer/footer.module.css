@@ -1,0 +1,26 @@
+.footer {
+    background-color: #1d1d1d;
+    padding: 18px 0;
+    margin-top: 50px;
+}
+.footerBox {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1000px;
+    align-items: center;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.imageBox {
+}
+
+.image {
+    width: 150px;
+    height: auto;
+}
+
+.text {
+    font-size: 12px;
+}
