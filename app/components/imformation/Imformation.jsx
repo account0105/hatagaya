@@ -26,7 +26,8 @@ const Imfomation = () => {
                         sx={{
                             width: "100%",
                             padding: "22px",
-                            maxWidth: "1000px",
+                            maxWidth: "1300px",
+                            fontSize: { xs: "12px", sm: "14px", md: "20px" },
                         }}
                     >
                         <Grid item xs={2} sm={4}>
