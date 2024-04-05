@@ -25,69 +25,73 @@ const Recommend = (props) => {
     } = usePrevNextButtons(emblaApi);
 
     return (
-        <section className="embla">
-          <p className="recommend_title">おすすめ</p>
-            <div className="embla__viewport" ref={emblaRef}>
-                <div className="embla__container">
-                    {slides.map((item, index) => {
-                        const price = new Intl.NumberFormat("en-US").format(
-                            item.price
-                        );
+        <div className="box">
+            <section className="embla">
+                <p className="recommend_title">おすすめ</p>
+                <div className="embla__viewport" ref={emblaRef}>
+                    <div className="embla__container">
+                        {slides.map((item, index) => {
+                            const price = new Intl.NumberFormat("en-US").format(
+                                item.price
+                            );
 
-                        return (
-                            <div className="embla__slide" key={index}>
-                                <div className="embla__slide__number">
-                                    <div className="slide__image__box">
-                                        <Image
-                                            src={item.image.url}
-                                            width={200}
-                                            height={120}
-                                            alt={item.title}
-                                            className="slide__image"
-                                        />
+                            return (
+                                <div className="embla__slide" key={index}>
+                                    <div className="embla__slide__number">
+                                        <div className="slide__image__box">
+                                            <Image
+                                                src={item.image.url}
+                                                width={200}
+                                                height={120}
+                                                alt={item.title}
+                                                className="slide__image"
+                                            />
+                                        </div>
+                                        <p className="slide_title">
+                                            {item.title}
+                                        </p>
+                                        <p className="slide_price">{`￥${price}`}</p>
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: sanitizeHtml(item.text),
+                                            }}
+                                            className="slide_text"
+                                        ></div>
                                     </div>
-                                    <p className="slide_title">{item.title}</p>
-                                    <p className="slide_price">{`￥${price}`}</p>
-                                    <div
-                                        dangerouslySetInnerHTML={{
-                                            __html: sanitizeHtml(item.text),
-                                        }}
-                                        className="slide_text"
-                                    ></div>
                                 </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-
-            <div className="embla__controls">
-                <div className="embla__buttons">
-                    <PrevButton
-                        onClick={onPrevButtonClick}
-                        disabled={prevBtnDisabled}
-                    />
-                    <NextButton
-                        onClick={onNextButtonClick}
-                        disabled={nextBtnDisabled}
-                    />
+                            );
+                        })}
+                    </div>
                 </div>
 
-                <div className="embla__dots">
-                    {scrollSnaps.map((_, index) => (
-                        <DotButton
-                            key={index}
-                            onClick={() => onDotButtonClick(index)}
-                            className={"embla__dot".concat(
-                                index === selectedIndex
-                                    ? " embla__dot--selected"
-                                    : ""
-                            )}
+                <div className="embla__controls">
+                    <div className="embla__buttons">
+                        <PrevButton
+                            onClick={onPrevButtonClick}
+                            disabled={prevBtnDisabled}
                         />
-                    ))}
+                        <NextButton
+                            onClick={onNextButtonClick}
+                            disabled={nextBtnDisabled}
+                        />
+                    </div>
+
+                    <div className="embla__dots">
+                        {scrollSnaps.map((_, index) => (
+                            <DotButton
+                                key={index}
+                                onClick={() => onDotButtonClick(index)}
+                                className={"embla__dot".concat(
+                                    index === selectedIndex
+                                        ? " embla__dot--selected"
+                                        : ""
+                                )}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 };
 

@@ -54,49 +54,93 @@ const MenuHeader = ({ data, params }) => {
     }
 
     const sortedComponentList = sortComponentList(componentList, params.name);
-    console.log(sortedComponentList);
 
     return (
-        <div style={{ marginTop: "45px" }}>
-            <div style={{ maxWidth: "1000px", width: "90%", margin: "0 auto" }}>
+        <div>
+            <div
+                style={{
+                    maxWidth: "1000px",
+                    width: "90%",
+                    margin: "0 auto",
+                    padding: "0 0 20px 0",
+                }}
+            >
                 {componentList.map((item, index) => {
                     const Component = item.component;
                     return (
                         <div key={index}>
-                            <Accordion
-                                sx={{
-                                    backgroundColor: "#1d1d1d",
-                                    margin: "15px 10px",
-                                }}
-                            >
-                                <AccordionSummary
-                                    expandIcon={
-                                        <ExpandMoreIcon
-                                            sx={{
-                                                fontSize: {
-                                                    xs: "20px",
-                                                    sm: "25px",
-                                                    md: "30px",
-                                                },
-                                            }}
-                                        />
-                                    }
-                                    aria-controls="panel1-content"
-                                    id="panel1-header"
+                            {item.name === params.name ? (
+
+                                <Accordion defaultExpanded
                                     sx={{
-                                        fontSize: {
-                                            xs: "20px",
-                                            sm: "22px",
-                                            md: "26px",
-                                        },
+                                        backgroundColor: "#1d1d1d",
+                                        margin: "15px 10px",
                                     }}
                                 >
-                                    {item.name}
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Component data={data} />
-                                </AccordionDetails>
-                            </Accordion>
+                                    <AccordionSummary
+                                        expandIcon={
+                                            <ExpandMoreIcon
+                                                sx={{
+                                                    fontSize: {
+                                                        xs: "20px",
+                                                        sm: "25px",
+                                                        md: "30px",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        aria-controls="panel1-content"
+                                        id="panel1-header"
+                                        sx={{
+                                            fontSize: {
+                                                xs: "20px",
+                                                sm: "22px",
+                                                md: "26px",
+                                            },
+                                        }}
+                                    >
+                                        {item.name}
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Component data={data} />
+                                    </AccordionDetails>
+                                </Accordion>
+                            ) : (
+                                <Accordion
+                                    sx={{
+                                        backgroundColor: "#1d1d1d",
+                                        margin: "15px 10px",
+                                    }}
+                                >
+                                    <AccordionSummary
+                                        expandIcon={
+                                            <ExpandMoreIcon
+                                                sx={{
+                                                    fontSize: {
+                                                        xs: "20px",
+                                                        sm: "25px",
+                                                        md: "30px",
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        aria-controls="panel1-content"
+                                        id="panel1-header"
+                                        sx={{
+                                            fontSize: {
+                                                xs: "20px",
+                                                sm: "22px",
+                                                md: "26px",
+                                            },
+                                        }}
+                                    >
+                                        {item.name}
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Component data={data} />
+                                    </AccordionDetails>
+                                </Accordion>
+                            )}
                         </div>
                     );
                 })}

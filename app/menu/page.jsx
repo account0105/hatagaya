@@ -50,8 +50,16 @@ export default function Page({ params, searchParams }) {
         <>
             <div className="container">
                 <div className="title">メニュー</div>
-                <Recommend slides={SLIDES} options={OPTIONS} />
-                <MenuList data={menuList} params={searchParams} />
+                {searchParams.name ? (
+                    <MenuList data={menuList} params={searchParams} />
+                ) : (
+                    <Recommend slides={SLIDES} options={OPTIONS} />
+                )}
+                {searchParams.name ? (
+                    <Recommend slides={SLIDES} options={OPTIONS} />
+                ) : (
+                    <MenuList data={menuList} params={searchParams} />
+                )}
             </div>
         </>
     );

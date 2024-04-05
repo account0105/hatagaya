@@ -1,3 +1,6 @@
+.box {
+    margin: 0 0 50px 0;
+}
 .recommend_title {
     font-size: 22px;
     margin: 10px 0 0 10px;
@@ -6,6 +9,7 @@
 .embla {
     max-width: 1000px;
     padding: 20px;
+    margin:0 auto;
     --slide-height: auto;
     --slide-spacing: 1rem;
     --slide-size: 100%;
@@ -151,7 +155,7 @@
     }
     .embla {
         padding: 55px 75px;
-        margin: auto;
+        margin:0 auto;
         --slide-height: auto;
         --slide-spacing: 1rem;
         --slide-size: 100%;

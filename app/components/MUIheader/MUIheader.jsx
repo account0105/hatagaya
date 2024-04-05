@@ -20,6 +20,10 @@ const pages = [
 ];
 const communities = [
     {
+        name: "Instagram",
+        url: "https://www.instagram.com/yakiniku_hatagaya/",
+    },
+    {
         name: "食べログ",
         url: "https://tabelog.com/tokyo/A1318/A131807/13213734/",
     },
@@ -51,7 +55,6 @@ function ResponsiveAppBar() {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
-
 
     // コミュニティ
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -298,6 +301,7 @@ function ResponsiveAppBar() {
                                             fontFamily:
                                                 "Shippori Mincho, serif",
                                             fontSize: "18px",
+                                            fontWeight: "300",
                                         }}
                                     >
                                         {page.name}
@@ -316,7 +320,7 @@ function ResponsiveAppBar() {
                                     color: "white",
                                     fontFamily: "Shippori Mincho, serif",
                                     fontSize: "18px",
-                                    fontWeight: "100",
+                                    fontWeight: "300",
                                 }}
                             >
                                 コミュニティ
