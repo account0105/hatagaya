@@ -39,7 +39,7 @@ const Single = ({ data }) => {
         <div className={style.menuBox}>
             {menuList.map((category, index) => (
                 <div key={index}>
-                    <h2 className={styles.title}>{category.name}</h2>
+                    <p className={styles.title}>{category.name}</p>
                     <List sx={style}>
                         {category.data.map((item, index) => {
                             const price = new Intl.NumberFormat("en-US").format(
@@ -88,6 +88,7 @@ const Single = ({ data }) => {
                                                             width: {
                                                                 md: "80%",
                                                             },
+                                                            fontWeight: "100",
                                                         }}
                                                     >
                                                         {item.title}
@@ -100,6 +101,7 @@ const Single = ({ data }) => {
                                                                 xs: "12px",
                                                                 sm: "22px",
                                                             },
+                                                            fontWeight: "100",
                                                         }}
                                                     >
                                                         {`￥${price}`}

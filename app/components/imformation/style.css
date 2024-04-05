@@ -17,6 +17,10 @@
     margin: 0 auto;
 }
 
+.text {
+    font-weight: 100;
+}
+
 .gridBox {
     background-color: #1d1d1d;
     margin: 0 auto;

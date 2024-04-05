@@ -4,12 +4,13 @@
 .recommend_title {
     font-size: 22px;
     margin: 10px 0 0 10px;
+    font-weight: "100";
 }
 
 .embla {
     max-width: 1000px;
     padding: 20px;
-    margin:0 auto;
+    margin: 0 auto;
     --slide-height: auto;
     --slide-spacing: 1rem;
     --slide-size: 100%;
@@ -38,17 +39,20 @@
 .slide__image {
     width: 100%;
     height: auto;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
     border-radius: 5px;
 }
 
 .slide_title {
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: 100;
 }
 
 .slide_price {
     font-size: 15px;
     font-weight: 100;
+    margin:10px 0
 }
 
 .slide_text {
@@ -155,22 +159,22 @@
     }
     .embla {
         padding: 55px 75px;
-        margin:0 auto;
+        margin: 0 auto;
         --slide-height: auto;
         --slide-spacing: 1rem;
         --slide-size: 100%;
     }
 
     .slide_title {
-        font-size: 20px;
+        font-size: 28px;
     }
 
     .slide_price {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     .slide_text {
-        font-size: 18px;
+        font-size: 22px;
         font-weight: 100;
     }
 }

@@ -85,6 +85,8 @@ const MenuHeader = ({ data, params }) => {
                                                         sm: "25px",
                                                         md: "30px",
                                                     },
+
+
                                                 }}
                                             />
                                         }
@@ -96,6 +98,8 @@ const MenuHeader = ({ data, params }) => {
                                                 sm: "22px",
                                                 md: "26px",
                                             },
+
+                                            
                                         }}
                                     >
                                         {item.name}
@@ -119,7 +123,9 @@ const MenuHeader = ({ data, params }) => {
                                                         xs: "20px",
                                                         sm: "25px",
                                                         md: "30px",
+
                                                     },
+
                                                 }}
                                             />
                                         }
@@ -130,7 +136,9 @@ const MenuHeader = ({ data, params }) => {
                                                 xs: "20px",
                                                 sm: "22px",
                                                 md: "26px",
+
                                             },
+
                                         }}
                                     >
                                         {item.name}

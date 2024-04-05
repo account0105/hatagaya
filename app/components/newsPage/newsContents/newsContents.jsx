@@ -32,7 +32,9 @@ export default function NewsContents() {
 
     return (
         <div style={{ padding: "95px 0 0 0", margin: "0 auto", width: "80%" }}>
-            <h2 style={{ margin: "0 0 40px 0" }}>お知らせ一覧</h2>
+            <h2 style={{ margin: "0 0 40px 0", fontWeight: "100" }}>
+                お知らせ一覧
+            </h2>
 
             <Grid
                 container
@@ -45,7 +47,12 @@ export default function NewsContents() {
                         <Card
                             sx={{
                                 maxWidth: 500,
-                                minHeight: { xs: 300, sm: 350,md:418,xl:350},
+                                minHeight: {
+                                    xs: 300,
+                                    sm: 350,
+                                    md: 418,
+                                    xl: 350,
+                                },
                                 backgroundColor: "#1D1D1D",
                                 margin: "0 auto",
                                 position: "relative",
@@ -62,6 +69,7 @@ export default function NewsContents() {
                                     gutterBottom
                                     variant="p"
                                     component="h2"
+                                    sx={{ fontWeight: "200",}}
                                 >
                                     {data.title}
                                 </Typography>
@@ -71,6 +79,7 @@ export default function NewsContents() {
                                     sx={{
                                         color: "black",
                                         fontSize: { xs: 16, sm: 18 },
+                                       
                                     }}
                                 >
                                     <div
@@ -90,7 +99,13 @@ export default function NewsContents() {
                             <CardActions>
                                 <Button
                                     href={`/news/${data.id}`}
-                                    sx={{ position: "absolute", bottom: 0,fontSize:{xs:16,sm:16,md:18} }}
+                                    sx={{
+                                        position: "absolute",
+                                        bottom: 0,
+                                        fontSize: { xs: 16, sm: 16, md: 18 },
+                                        fontFamily:
+                                                                "Shippori Mincho, serif",
+                                    }}
                                 >
                                     続きを読む
                                 </Button>

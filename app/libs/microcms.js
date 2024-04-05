@@ -35,7 +35,7 @@ export const getDetail = async (contentId, queries) => {
     const detailData = await client.getListDetail({
         customRequestInit: {
 			next: {
-				revalidate: 0,
+				revalidate: 3600,
 			},
 		},
         endpoint: "blog",

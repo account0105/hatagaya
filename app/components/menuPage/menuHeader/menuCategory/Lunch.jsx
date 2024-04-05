@@ -79,6 +79,7 @@ const Lunch = ({ data }) => {
                                                             width: {
                                                                 md: "80%",
                                                             },
+                                                            fontWeight:"100"
                                                         }}
                                                     >
                                                         {item.title}
@@ -91,6 +92,7 @@ const Lunch = ({ data }) => {
                                                                 xs: "12px",
                                                                 sm: "22px",
                                                             },
+                                                            fontWeight:"100"
                                                         }}
                                                     >
                                                         {`￥${price}`}

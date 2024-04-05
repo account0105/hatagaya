@@ -46,7 +46,7 @@ const Course = ({ data }) => {
                                         variant="p"
                                         sx={{
                                             fontSize: {
-                                                xs: "18px",
+                                                xs: "20px",
                                                 sm: "22px",
                                                 md: "26px",
                                             },
@@ -63,6 +63,7 @@ const Course = ({ data }) => {
                                                 sm: "18px",
                                                 md: "24px",
                                             },
+                                            fontWeight:'100'
                                         }}
                                     >{`￥${price}`}</Typography>
                                     <div
