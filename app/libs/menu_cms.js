@@ -20,6 +20,11 @@ const getList = async (queries) => {
     const listData = await client.getAllContents({
         endpoint: "menu",
         queries,
+        customRequestInit: {
+            next: {
+                revalidate: 3600,
+            },
+        },
     });
 
     return listData;
@@ -27,4 +32,4 @@ const getList = async (queries) => {
 
 // モジュールとしてエクスポート
 
-export { client, getList};
+export { client, getList };

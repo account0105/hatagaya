@@ -1,6 +1,6 @@
 .sectionWrap {
     background-color: #1e1e1e;
-    padding: 40px 0 30px 0;
+    padding: 0 0 10px 0;
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
@@ -31,35 +31,34 @@
 
 .title {
     font-weight: 100;
-    font-size: 18px;
+    font-size: 26px;
     background-color: #1e1e1e;
 }
 
 .text {
     font-weight: 100;
-    font-size: 12px;
+    font-size: 16px;
     background-color: #1e1e1e;
+    margin: 10px 0 0 0;
 }
 
 .reservation {
-    font-weight: 100;
-    background-color: #1e1e1e;
     display: flex;
     justify-content: space-between;
-    float: right;
-    margin: 0 10px 0 0;
-    align-items: center;
+    padding:45px 0 8px 25px;
+}
+
+.resvWrap {
 }
 
 .resvTitle {
     background-color: #1e1e1e;
-    font-size: 12px;
-    margin: 0 10px 0 0;
+    font-size: 18px;
+    display: block;
 }
 
 .link a {
-    font-size: 12px;
-    text-decoration: underline;
+    font-size: 14px;
 }
 
 @media screen and (min-width: 600px) {

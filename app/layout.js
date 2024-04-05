@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="ja">
             <link rel="icon" href="/favicon.ico" sizes="any" />
-            <body style={{ backgroundColor: "#161616" }}>
+            <body style={{ backgroundColor: "#161616" }}  className="theme-light">
                 <ResponsiveAppBar />
                 <main style={{ minHeight: "88vh" }}>{children}</main>
                 <Footer />

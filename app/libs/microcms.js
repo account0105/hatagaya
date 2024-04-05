@@ -20,7 +20,7 @@ export const getList = async (queries) => {
     const listData = await client.getList({
         customRequestInit: {
 			next: {
-				revalidate: 0,
+				revalidate: 3600,
 			},
 		},
         endpoint: "blog",

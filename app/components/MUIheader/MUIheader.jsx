@@ -14,11 +14,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const pages = [
-    { name: "ホーム", path: "/" },
     { name: "メニュー", path: "/menu" },
     { name: "店舗情報", path: "/shop" },
     { name: "お知らせ", path: "/news" },
-]; 
+];
 const communities = [
     {
         name: "Instagram",
@@ -190,9 +189,7 @@ function ResponsiveAppBar() {
                             <div>
                                 <Button
                                     id="mobile"
-                                    aria-controls={
-                                        open ? "mobMenu" : undefined
-                                    }
+                                    aria-controls={open ? "mobMenu" : undefined}
                                     aria-haspopup="true"
                                     aria-expanded={open ? "true" : undefined}
                                     onClick={handleClick}

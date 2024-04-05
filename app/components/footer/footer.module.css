@@ -24,3 +24,10 @@
 .text {
     font-size: 12px;
 }
+
+@media screen and (min-width: 60px) {
+    .text {
+        font-size: 17px;
+    }
+
+  }

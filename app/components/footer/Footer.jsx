@@ -19,12 +19,12 @@ const Footer = () => {
                     </Link>
                 </div>
                 <div>
-                    <p className={styles.text}>〒151-0072</p>
+                    <p className={styles.text}>〒151 - 0072</p>
                     <p className={styles.text}>
-                        東京都渋谷区幡ヶ谷1丁目2-8
-                        スカイマンション幡ヶ谷林ビル1F
+                        東京都渋谷区幡ヶ谷 １-２-８
+                        スカイマンション幡ヶ谷林ビル １F
                     </p>
-                    <p className={styles.text}>TEL 03-5333-2410</p>
+                    <p className={styles.text}>TEL 03 - 5333 - 2410</p>
                 </div>
             </div>
         </div>

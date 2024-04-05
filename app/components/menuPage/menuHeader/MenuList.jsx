@@ -7,7 +7,6 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import React from "react";
-import Image from "next/image";
 import Single from "./menuCategory/Single";
 import Course from "./menuCategory/Course";
 import Lunch from "./menuCategory/Lunch";
