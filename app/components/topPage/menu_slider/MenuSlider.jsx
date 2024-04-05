@@ -70,11 +70,18 @@ export default function MenuSlider() {
                 >
                     {images.map((src, index) => {
                         return (
-                            <SwiperSlide key={index}>
+                            <SwiperSlide
+                                key={index}
+                                style={{
+                                    boxShadow:
+                                        "0px 0px 10px 0px rgba(0, 0, 0, 0.47)",
+                                    borderRadius:"3px"
+                                }}
+                            >
                                 <Link
                                     href={{
                                         pathname: `/menu`,
-                                        query:{name:src.name}
+                                        query: { name: src.name },
                                     }}
                                 >
                                     <Image

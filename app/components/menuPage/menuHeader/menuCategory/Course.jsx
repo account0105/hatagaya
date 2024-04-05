@@ -26,7 +26,6 @@ const Course = ({ data }) => {
                 const price = new Intl.NumberFormat("en-US").format(item.price);
                 return (
                     <div key={index} style={{}}>
-                        {" "}
                         <Box sx={{ flexGrow: 1, padding: "20px" }}>
                             <Grid
                                 container

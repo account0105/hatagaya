@@ -45,7 +45,7 @@ export default function NewsContents() {
                         <Card
                             sx={{
                                 maxWidth: 500,
-                                minHeight: { xs: 300, sm: 350 },
+                                minHeight: { xs: 300, sm: 350,md:418,xl:350},
                                 backgroundColor: "#1D1D1D",
                                 margin: "0 auto",
                                 position: "relative",
@@ -70,7 +70,7 @@ export default function NewsContents() {
                                     color="text.secondary"
                                     sx={{
                                         color: "black",
-                                        fontSize: { xs: 16, sm: 20 },
+                                        fontSize: { xs: 16, sm: 18 },
                                     }}
                                 >
                                     <div

@@ -14,6 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const pages = [
+    { name: "ホーム", path: "/" },
     { name: "メニュー", path: "/menu" },
     { name: "店舗情報", path: "/shop" },
     { name: "お知らせ", path: "/news" },
@@ -177,7 +178,7 @@ function ResponsiveAppBar() {
                                             sx={{
                                                 fontFamily:
                                                     "Shippori Mincho, serif",
-                                                fontSize: "22px",
+                                                fontSize: "20px",
                                                 padding: "5px 20px",
                                             }}
                                         >
@@ -188,9 +189,9 @@ function ResponsiveAppBar() {
                             ))}
                             <div>
                                 <Button
-                                    id="basic-button"
+                                    id="mobile"
                                     aria-controls={
-                                        open ? "basic-menu" : undefined
+                                        open ? "mobMenu" : undefined
                                     }
                                     aria-haspopup="true"
                                     aria-expanded={open ? "true" : undefined}
@@ -206,12 +207,12 @@ function ResponsiveAppBar() {
                                     コミュニティ
                                 </Button>
                                 <Menu
-                                    id="basic-menu"
+                                    id="mobMenu"
                                     anchorEl={anchorEl}
                                     open={open}
                                     onClose={handleClose}
                                     MenuListProps={{
-                                        "aria-labelledby": "basic-button",
+                                        "aria-labelledby": "mobile",
                                     }}
                                     sx={{
                                         "& .MuiPaper-root": {
@@ -237,7 +238,7 @@ function ResponsiveAppBar() {
                                                             transform: `scale(1.1)`,
                                                             transition: "0.2s",
                                                         },
-                                                        fontSize: "18px",
+                                                        fontSize: "10px",
                                                         fontFamily: `"Shippori Mincho", serif`,
                                                     }}
                                                 >
