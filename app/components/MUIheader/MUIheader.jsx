@@ -17,7 +17,7 @@ const pages = [
     { name: "メニュー", path: "/menu" },
     { name: "店舗情報", path: "/shop" },
     { name: "お知らせ", path: "/news" },
-];
+]; 
 const communities = [
     {
         name: "Instagram",
