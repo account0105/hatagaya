@@ -32,7 +32,7 @@ export default function NewsContents() {
 
     return (
         <div style={{ padding: "95px 0 0 0", margin: "0 auto", width: "80%" }}>
-            <h2 style={{ margin: "0 0 40px 0", fontWeight: "100" }}>
+            <h2 className={styles.newsTitle}>
                 お知らせ一覧
             </h2>
 
@@ -50,8 +50,6 @@ export default function NewsContents() {
                                 minHeight: {
                                     xs: 300,
                                     sm: 350,
-                                    md: 418,
-                                    xl: 350,
                                 },
                                 backgroundColor: "#1D1D1D",
                                 margin: "0 auto",
@@ -69,7 +67,7 @@ export default function NewsContents() {
                                     gutterBottom
                                     variant="p"
                                     component="h2"
-                                    sx={{ fontWeight: "200",}}
+                                    sx={{ fontWeight: "200",fontSize:{sx:"20px",sm:"24px"}}}
                                 >
                                     {data.title}
                                 </Typography>
@@ -78,7 +76,7 @@ export default function NewsContents() {
                                     color="text.secondary"
                                     sx={{
                                         color: "black",
-                                        fontSize: { xs: 16, sm: 18 },
+                                        fontSize: { xs: 16, sm: 20 },
                                        
                                     }}
                                 >
@@ -93,6 +91,7 @@ export default function NewsContents() {
                                                     : data.text
                                             ),
                                         }}
+                                        className={styles.text}
                                     ></div>
                                 </Typography>
                             </CardContent>
