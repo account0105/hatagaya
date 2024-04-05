@@ -43,22 +43,15 @@ const communities = [
 
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
     };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
 
     // コミュニティ
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -143,9 +136,9 @@ function ResponsiveAppBar() {
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
                             color="inherit"
-                            sx={{ width: "60px" }}
+                            sx={{ width: "60px", height: "60px" }}
                         >
-                            <MenuIcon />
+                            <MenuIcon sx={{ width: "60px", height: "30px" }} />
                         </IconButton>
                         <Menu
                             id="menu-appbar"
@@ -181,8 +174,8 @@ function ResponsiveAppBar() {
                                             sx={{
                                                 fontFamily:
                                                     "Shippori Mincho, serif",
-                                                fontSize: "26px",
-                                                padding: "20px",
+                                                fontSize: "22px",
+                                                padding: "5px 20px",
                                             }}
                                         >
                                             {page.name}
@@ -190,6 +183,68 @@ function ResponsiveAppBar() {
                                     </Link>
                                 </MenuItem>
                             ))}
+                            <div>
+                                <Button
+                                    id="basic-button"
+                                    aria-controls={
+                                        open ? "basic-menu" : undefined
+                                    }
+                                    aria-haspopup="true"
+                                    aria-expanded={open ? "true" : undefined}
+                                    onClick={handleClick}
+                                    sx={{
+                                        fontFamily: "Shippori Mincho, serif",
+                                        fontSize: "22px",
+                                        padding: "5px 20px",
+                                        color: "white",
+                                        fontWeight: "400",
+                                    }}
+                                >
+                                    コミュニティ
+                                </Button>
+                                <Menu
+                                    id="basic-menu"
+                                    anchorEl={anchorEl}
+                                    open={open}
+                                    onClose={handleClose}
+                                    MenuListProps={{
+                                        "aria-labelledby": "basic-button",
+                                    }}
+                                    sx={{
+                                        "& .MuiPaper-root": {
+                                            // MUIのPaperコンポーネントにスタイルを適用
+                                            backgroundColor: "#1D1D1D", // ここで背景色を設定
+                                        },
+                                        width: "100%",
+                                    }}
+                                >
+                                    {communities.map((data, index) => (
+                                        <MenuItem
+                                            onClick={handleClose}
+                                            key={index}
+                                            sx={{
+                                                padding: "20px 20px 10px 20px",
+                                                borderRadius: "10px",
+                                            }}
+                                        >
+                                            <Link href={data.url} passHref>
+                                                <Typography
+                                                    sx={{
+                                                        "&:hover": {
+                                                            transform: `scale(1.1)`,
+                                                            transition: "0.2s",
+                                                        },
+                                                        fontSize: "18px",
+                                                        fontFamily: `"Shippori Mincho", serif`,
+                                                    }}
+                                                >
+                                                    {data.name}
+                                                </Typography>
+                                            </Link>
+                                        </MenuItem>
+                                    ))}
+                                </Menu>
+                            </div>
                         </Menu>
                     </Box>
                     {/* スマホアイコン */}{" "}
@@ -260,7 +315,7 @@ function ResponsiveAppBar() {
                                 sx={{
                                     color: "white",
                                     fontFamily: "Shippori Mincho, serif",
-                                    fontSize: "17px",
+                                    fontSize: "18px",
                                     fontWeight: "100",
                                 }}
                             >
@@ -287,15 +342,17 @@ function ResponsiveAppBar() {
                                         onClick={handleClose}
                                         key={index}
                                         sx={{
-                                            "&:hover": {
-                                                opacity: "0.8",
-                                                transition: "0.1s",
-                                            },
+                                            padding: "20px 20px 10px 20px",
+                                            borderRadius: "10px",
                                         }}
                                     >
                                         <Link href={data.url} passHref>
                                             <Typography
                                                 sx={{
+                                                    "&:hover": {
+                                                        transform: `scale(1.1)`,
+                                                        transition: "0.2s",
+                                                    },
                                                     fontSize: "18px",
                                                     fontFamily: `"Shippori Mincho", serif`,
                                                 }}

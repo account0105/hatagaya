@@ -30,16 +30,9 @@ export default function NewsContents() {
     const contents = use(getList());
     const data = contents.contents;
 
-    if (!data)
-        return (
-            <div style={{ color: "black", margin: "90px 0 0 0" }}>
-                Loading...
-            </div>
-        );
-
     return (
         <div style={{ padding: "95px 0 0 0", margin: "0 auto", width: "80%" }}>
-            <h2 style={{ margin: "0 0 60px 50px" }}>お知らせ一覧</h2>
+            <h2 style={{ margin: "0 0 40px 0" }}>お知らせ一覧</h2>
 
             <Grid
                 container
@@ -77,11 +70,10 @@ export default function NewsContents() {
                                     color="text.secondary"
                                     sx={{
                                         color: "black",
-                                        fontSize: { xs: 12, sm: 15 },
+                                        fontSize: { xs: 16, sm: 20 },
                                     }}
                                 >
                                     <div
-                                        style={{ color: "black" }}
                                         dangerouslySetInnerHTML={{
                                             __html: sanitizeHtml(
                                                 data.text.length > 45
@@ -98,7 +90,7 @@ export default function NewsContents() {
                             <CardActions>
                                 <Button
                                     href={`/news/${data.id}`}
-                                    sx={{ position: "absolute", bottom: 0 }}
+                                    sx={{ position: "absolute", bottom: 0,fontSize:{xs:16,sm:16,md:18} }}
                                 >
                                     続きを読む
                                 </Button>

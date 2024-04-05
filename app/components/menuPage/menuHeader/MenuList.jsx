@@ -14,30 +14,48 @@ import Lunch from "./menuCategory/Lunch";
 import Drink from "./menuCategory/Drink";
 import TakeOut from "./menuCategory/TakeOut";
 
-const componentList = [
-    {
-        name: "単品",
-        component: Single,
-    },
-    {
-        name: "コース",
-        component: Course,
-    },
-    {
-        name: "ランチ",
-        component: Lunch,
-    },
-    {
-        name: "ドリンク",
-        component: Drink,
-    },
-    {
-        name: "テイクアウト",
-        component: TakeOut,
-    },
-];
+const MenuHeader = ({ data, params }) => {
+    const componentList = [
+        {
+            name: "単品",
+            component: Single,
+        },
+        {
+            name: "コース",
+            component: Course,
+        },
+        {
+            name: "ランチ",
+            component: Lunch,
+        },
+        {
+            name: "ドリンク",
+            component: Drink,
+        },
+        {
+            name: "テイクアウト",
+            component: TakeOut,
+        },
+    ];
 
-const MenuHeader = ({ data }) => {
+    function sortComponentList(list, matchValue) {
+        return list.sort((a, b) => {
+            // If 'a' matches the data, it should come first
+            if (a.name === matchValue) {
+                return -1;
+            }
+            // If 'b' matches the data, 'a' should not come first
+            if (b.name === matchValue) {
+                return 1;
+            }
+            // If neither 'a' nor 'b' match, maintain original order
+            return 0;
+        });
+    }
+
+    const sortedComponentList = sortComponentList(componentList, params.name);
+    console.log(sortedComponentList);
+
     return (
         <div style={{ marginTop: "45px" }}>
             <div style={{ maxWidth: "1000px", width: "90%", margin: "0 auto" }}>

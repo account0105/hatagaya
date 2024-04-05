@@ -1,14 +1,16 @@
 .recommend_title {
-    font-size: 18px;
+    font-size: 22px;
+    margin: 10px 0 0 10px;
 }
 
 .embla {
     max-width: 1000px;
     padding: 20px;
-    margin: auto;
     --slide-height: auto;
     --slide-spacing: 1rem;
     --slide-size: 100%;
+    background-color: #1d1d1d;
+    border-radius: 10px;
 }
 .embla__viewport {
     overflow: hidden;
@@ -23,7 +25,7 @@
     flex: 0 0 var(--slide-size);
     min-width: 0;
     padding-left: var(--slide-spacing);
-    margin:20px 0 0 0;
+    margin: 10px 0 0 0;
 }
 
 .slide__image__box {
@@ -42,7 +44,7 @@
 
 .slide_price {
     font-size: 15px;
-    font-weight:100;
+    font-weight: 100;
 }
 
 .slide_text {
@@ -57,8 +59,8 @@
     font-weight: 600;
     height: var(--slide-height);
     --detail-medium-contrast: none;
-    padding: 10px;
     margin-top: 15px;
+    padding: 10px;
 }
 
 .embla__controls {
@@ -148,7 +150,7 @@
         font-size: 28px;
     }
     .embla {
-        padding: 55px 75px 0 75px;
+        padding: 55px 75px;
         margin: auto;
         --slide-height: auto;
         --slide-spacing: 1rem;
@@ -158,11 +160,11 @@
     .slide_title {
         font-size: 20px;
     }
-    
+
     .slide_price {
         font-size: 20px;
     }
-    
+
     .slide_text {
         font-size: 18px;
         font-weight: 100;

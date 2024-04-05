@@ -4,10 +4,11 @@ import MenuList from "../components/menuPage/menuHeader/MenuList";
 import Recommend from "../components/menuPage/menuHeader/recommend/Reccomend";
 import "./css/base.css";
 import "./css/embla.css";
+import "./css/style.css";
 
 export const revalidate = 0;
 
-export default function Page() {
+export default function Page({ params, searchParams }) {
     const data = use(getList());
 
     function categorizeItems(items) {
@@ -41,16 +42,17 @@ export default function Page() {
         return categorizedObject;
     }
     const menuList = categorizeItems(data);
-    const recommendMenu = menuList['おすすめ']
-    // console.log(recommendMenu)
+    const recommendMenu = menuList["おすすめ"];
     const OPTIONS = {};
-    const SLIDE_COUNT = recommendMenu.length;
     const SLIDES = recommendMenu;
 
     return (
-        <div style={{ marginTop: "60px" }}>
-            <Recommend slides={SLIDES} options={OPTIONS} />
-            <MenuList data={menuList} />
-        </div>
+        <>
+            <div className="container">
+                <div className="title">メニュー</div>
+                <Recommend slides={SLIDES} options={OPTIONS} />
+                <MenuList data={menuList} params={searchParams} />
+            </div>
+        </>
     );
 }

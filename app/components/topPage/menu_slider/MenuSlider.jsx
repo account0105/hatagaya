@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./MenuSlider.module.css";
 import Image from "next/image";
 import { FreeMode, Navigation, Pagination } from "swiper/modules";
@@ -68,35 +68,36 @@ export default function MenuSlider() {
                     centeredSlidesBounds={true}
                     className={styles.slideWrapper}
                 >
-                    {images.map((src, index) => (
-                        <SwiperSlide key={index}>
-                            <Link
-                                href={{
-                                    pathname: `/menu`,
-                                    query: { name: src.name },
-                                }}
-                            >
-                                <Image
-                                    src={src.imgUrl}
-                                    width={500}
-                                    height={280}
-                                    alt="Slider Image"
-                                    className={styles.slideImage}
-                                />
-                            </Link>
-                            <div className={styles.menu_title}>
+                    {images.map((src, index) => {
+                        return (
+                            <SwiperSlide key={index}>
                                 <Link
                                     href={{
                                         pathname: `/menu`,
-                                        query: { name: src.name },
+                                        query:{name:src.name}
                                     }}
-                                    className={styles.menu_title_link}
                                 >
-                                    {src.name}
+                                    <Image
+                                        src={src.imgUrl}
+                                        width={500}
+                                        height={280}
+                                        alt="Slider Image"
+                                        className={styles.slideImage}
+                                    />
                                 </Link>
-                            </div>
-                        </SwiperSlide>
-                    ))}
+                                <div className={styles.menu_title}>
+                                    <Link
+                                        href={{
+                                            pathname: `/menu`,
+                                        }}
+                                        className={styles.menu_title_link}
+                                    >
+                                        {src.name}
+                                    </Link>
+                                </div>
+                            </SwiperSlide>
+                        );
+                    })}
                 </Swiper>
             </div>
         </div>
