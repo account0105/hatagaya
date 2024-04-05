@@ -45,7 +45,7 @@ const Imfomation = () => {
                             <p>電話番号</p>
                         </Grid>
                         <Grid item xs={2} sm={4}>
-                            <p>050-5594-7310</p>
+                            <p>03-5333-2410</p>
                         </Grid>
                         <Grid item xs={2} sm={4}>
                             <p>営業時間</p>

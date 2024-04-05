@@ -24,7 +24,7 @@ const Footer = () => {
                         東京都渋谷区幡ヶ谷1丁目2-8
                         スカイマンション幡ヶ谷林ビル1F
                     </p>
-                    <p className={styles.text}>TEL 050-5594-7310</p>
+                    <p className={styles.text}>TEL 03-5333-2410</p>
                 </div>
             </div>
         </div>
