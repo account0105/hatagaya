@@ -73,7 +73,7 @@ const TakeOut = ({ data }) => {
                                                             fontFamily:
                                                                 "Shippori Mincho, serif",
                                                             fontSize: {
-                                                                xs: "12px",
+                                                                xs: "14px",
                                                                 sm: "22px",
                                                             },
                                                             width: {
@@ -88,7 +88,7 @@ const TakeOut = ({ data }) => {
                                                         component="p"
                                                         sx={{
                                                             fontSize: {
-                                                                xs: "12px",
+                                                                xs: "14px",
                                                                 sm: "22px",
                                                             },
                                                         }}
@@ -136,7 +136,7 @@ const TakeOut = ({ data }) => {
                                             variant="p"
                                             sx={{
                                                 fontSize: {
-                                                    xs: "12px",
+                                                    xs: "14px",
                                                     sm: "22px",
                                                 },
                                             }}
@@ -147,7 +147,7 @@ const TakeOut = ({ data }) => {
                                             variant="p"
                                             sx={{
                                                 fontSize: {
-                                                    xs: "12px",
+                                                    xs: "14px",
                                                     sm: "22px",
                                                 },
                                             }}

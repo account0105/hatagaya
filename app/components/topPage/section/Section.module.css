@@ -24,7 +24,7 @@
 }
 
 .textBox {
-    width: 80%;
+    width: 100%;
     padding: 10px 0 0 10px;
     background-color: #1e1e1e;
 }
@@ -99,5 +99,12 @@
 
     .link a {
         font-size: 18px;
+    }
+}
+@media screen and (min-width: 1300px) {
+    .sectionBox {
+        width: 65vw;
+        margin: 0 auto;
+        padding: 45px 45px;
     }
 }

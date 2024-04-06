@@ -57,13 +57,15 @@ const Course = ({ data }) => {
                                     </Typography>
                                     <Typography
                                         sx={{
+                                            fontFamily:
+                                                "Shippori Mincho, serif",
                                             marginBottom: "20px",
                                             fontSize: {
                                                 xs: "16px",
                                                 sm: "18px",
                                                 md: "24px",
                                             },
-                                            fontWeight:'100'
+                                            fontWeight: "100",
                                         }}
                                     >{`￥${price}`}</Typography>
                                     <div

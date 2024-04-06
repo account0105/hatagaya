@@ -1,8 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import styles from "./news.module.css";
 import {
-    Box,
     Button,
     Card,
     CardActions,
@@ -11,7 +8,6 @@ import {
     Grid,
     Typography,
 } from "@mui/material";
-import Link from "next/link";
 import { getDetail, getList } from "../../../libs/microcms";
 import sanitizeHtml from "sanitize-html";
 import { use } from "react";
@@ -32,9 +28,16 @@ export default function NewsContents() {
 
     return (
         <div style={{ padding: "95px 0 0 0", margin: "0 auto", width: "80%" }}>
-            <h2 className={styles.newsTitle}>
+            <Typography
+                sx={{
+                    fontFamily: "Shippori Mincho, serif",
+                    fontSize: { xs: "20px", sm: "22px", md: "26px" },
+                    marginBottom:"40px",
+                    fontWeight:"100"
+                }}
+            >
                 お知らせ一覧
-            </h2>
+            </Typography>
 
             <Grid
                 container
@@ -67,7 +70,10 @@ export default function NewsContents() {
                                     gutterBottom
                                     variant="p"
                                     component="h2"
-                                    sx={{ fontWeight: "200",fontSize:{sx:"20px",sm:"24px"}}}
+                                    sx={{
+                                        fontWeight: "200",
+                                        fontSize: { xs: "16px", sm: "22px" },
+                                    }}
                                 >
                                     {data.title}
                                 </Typography>
@@ -76,8 +82,7 @@ export default function NewsContents() {
                                     color="text.secondary"
                                     sx={{
                                         color: "black",
-                                        fontSize: { xs: 16, sm: 20 },
-                                       
+                                        fontSize: { xs: 14, sm: 16 },
                                     }}
                                 >
                                     <div
@@ -91,7 +96,6 @@ export default function NewsContents() {
                                                     : data.text
                                             ),
                                         }}
-                                        className={styles.text}
                                     ></div>
                                 </Typography>
                             </CardContent>
@@ -102,8 +106,7 @@ export default function NewsContents() {
                                         position: "absolute",
                                         bottom: 0,
                                         fontSize: { xs: 16, sm: 16, md: 18 },
-                                        fontFamily:
-                                                                "Shippori Mincho, serif",
+                                        fontFamily: "Shippori Mincho, serif",
                                     }}
                                 >
                                     続きを読む
