@@ -1,10 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 import NewsContents from "../components/newsPage/newsContents/newsContents";
-
+import CircularIndeterminate from "../components/Loading";
 export default function Home() {
     return (
         <>
-            <NewsContents />
+            <Suspense fallback={<div style={{margin:"100px 0  0 100px" }}>loading</div>}>
+                <NewsContents />
+            </Suspense>
         </>
     );
 }

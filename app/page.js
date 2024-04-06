@@ -51,9 +51,12 @@ export default function Home() {
     return (
         <>
             <div>
-                <ResponsiveAppBar />
                 <SlideShow />
-                <Recommend slides={SLIDES} options={OPTIONS} />
+                <Suspense
+                    fallback={<div style={{ margin: "100px" }}>loading</div>}
+                >
+                    <Recommend slides={SLIDES} options={OPTIONS} />
+                </Suspense>
                 <MenuSlider />
                 <Section />
                 <Map />

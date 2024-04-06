@@ -19,10 +19,10 @@ export const client = createClient({
 export const getList = async (queries) => {
     const listData = await client.getList({
         customRequestInit: {
-			next: {
-				revalidate: 3600,
-			},
-		},
+            next: {
+                revalidate: 3600,
+            },
+        },
         endpoint: "blog",
         queries,
     });
@@ -34,14 +34,13 @@ export const getList = async (queries) => {
 export const getDetail = async (contentId, queries) => {
     const detailData = await client.getListDetail({
         customRequestInit: {
-			next: {
-				revalidate: 3600,
-			},
-		},
+            next: {
+                revalidate: 3600,
+            },
+        },
         endpoint: "blog",
         contentId,
         queries,
     });
     return detailData;
 };
-

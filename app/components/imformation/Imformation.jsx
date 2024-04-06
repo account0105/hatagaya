@@ -1,26 +1,27 @@
 import { Box, Divider, Grid } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import "./style.css";
+import styles from"./style.module.css";
 
 const Imfomation = () => {
 
 
     return (
         <div style={{ width: "100%" }}>
-            <div className="informationBox">
-                <div className="title">
+            <div className={styles.informationBox}>
+                <div className={styles.title}>
                     <Image
                         width={150}
                         height={100}
                         alt="image"
                         src="/image/logo-removebg.png"
-                        className="image"
+                        className={styles.image}
+
                     />
                     <h1 className="text">焼肉　はたがや</h1>
                 </div>
 
-                <div className="gridBox">
+                <div className={styles.gridBox}>
                     <Grid
                         container
                         spacing={{ xs: 2, md: 3 }}

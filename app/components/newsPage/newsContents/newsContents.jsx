@@ -15,13 +15,6 @@ import { use } from "react";
 export const revalidate = 10;
 
 export default function NewsContents() {
-    // function cutString(s, maxLength) {
-    //     if (s.length > maxLength) {
-    //         return s.substring(0, maxLength) + "...";
-    //     } else {
-    //         return s + "...";
-    //     }
-    // }
 
     const contents = use(getList());
     const data = contents.contents;
