@@ -1,12 +1,8 @@
-import ResponsiveAppBar from "../../components/MUIheader/MUIheader";
 import { notFound } from "next/navigation";
-import parse from "html-react-parser";
 import { getDetail, getList } from "../../libs/microcms";
 import Image from "next/image";
 import sanitizeHtml from "sanitize-html";
 import styles from "./page.module.css";
-import { Suspense } from "react";
-import Loading from "../../components/Loading";
 
 async function generateStaticParams() {
     const { contents } = await getList();
@@ -39,7 +35,6 @@ export default async function StaticDetailPage({ params }) {
         <div>
             <div className={styles.container}>
                 <div className={styles.contentsBox}>
-                    <Suspense fallback={<div style={{margin:"100px 0 0 0"}}>loading</div>}>
                         <h2 className={styles.title}>{post.title}</h2>
                         <p>{cutString(post.createdAt, 10)}</p>
                         <Image
@@ -55,7 +50,6 @@ export default async function StaticDetailPage({ params }) {
                             }}
                             className={styles.text}
                         ></div>
-                    </Suspense>
                 </div>
             </div>
         </div>

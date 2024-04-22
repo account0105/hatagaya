@@ -1,21 +1,14 @@
 import { createClient } from "microcms-js-sdk";
 
-// 環境変数のチェック
-// if (!process.env.MICROCMS_SERVICE_DOMAIN) {
-//     throw new Error("MICROCMS_SERVICE_DOMAIN is required");
-// }
 
-// if (!process.env.MICROCMS_API_KEY) {
-//     throw new Error("MICROCMS_API_KEY is required");
-// }
 
-// API取得用のクライアントを作成
+// API取得用のクライアント
 export const client = createClient({
     serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
     apiKey: process.env.MICROCMS_API_KEY,
 });
 
-// ブログ一覧を取得する関数
+// ブログ一覧取得
 export const getList = async (queries) => {
     const listData = await client.getList({
         customRequestInit: {
@@ -30,7 +23,7 @@ export const getList = async (queries) => {
     return listData;
 };
 
-// ブログの詳細を取得する関数
+// ブログ詳細取得
 export const getDetail = async (contentId, queries) => {
     const detailData = await client.getListDetail({
         customRequestInit: {

@@ -4,7 +4,7 @@ import MenuSlider from "./components/topPage/menu_slider/MenuSlider";
 import SlideShow from "./components/topPage/commitment/SlideShow";
 import Map from "./components/map/Map";
 import Recommend from "./components/menuPage/menuHeader/recommend/Reccomend";
-import { Suspense, use } from "react";
+import { use } from "react";
 import { getList } from "./libs/menu_cms";
 import "./menu/css/base.css";
 import "./menu/css/style.css";
@@ -52,11 +52,8 @@ export default function Home() {
         <>
             <div>
                 <SlideShow />
-                <Suspense
-                    fallback={<div style={{ margin: "100px" }}>loading</div>}
-                >
+            
                     <Recommend slides={SLIDES} options={OPTIONS} />
-                </Suspense>
                 <MenuSlider />
                 <Section />
                 <Map />
