@@ -1,7 +1,5 @@
 import { createClient } from "microcms-js-sdk";
 
-
-
 // API取得用のクライアント
 export const client = createClient({
     serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
@@ -10,30 +8,39 @@ export const client = createClient({
 
 // ブログ一覧取得
 export const getList = async (queries) => {
-    const listData = await client.getList({
-        customRequestInit: {
-            next: {
-                revalidate: 3600,
+    try {
+        const listData = await client.getList({
+            customRequestInit: {
+                next: {
+                    revalidate: 3600,
+                },
             },
-        },
-        endpoint: "blog",
-        queries,
-    });
-
-    return listData;
+            endpoint: "blog",
+            queries,
+        });
+        return listData;
+    } catch (error) {
+        console.error("Error fetching blog list:", error);
+        throw error;
+    }
 };
 
 // ブログ詳細取得
 export const getDetail = async (contentId, queries) => {
-    const detailData = await client.getListDetail({
-        customRequestInit: {
-            next: {
-                revalidate: 3600,
+    try {
+        const detailData = await client.getListDetail({
+            customRequestInit: {
+                next: {
+                    revalidate: 3600,
+                },
             },
-        },
-        endpoint: "blog",
-        contentId,
-        queries,
-    });
-    return detailData;
+            endpoint: "blog",
+            contentId,
+            queries,
+        });
+        return detailData;
+    } catch (error) {
+        console.error("Error fetching blog detail:", error);
+        throw error;
+    }
 };
