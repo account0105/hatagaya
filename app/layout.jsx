@@ -1,9 +1,7 @@
 import "./globals.css";
-import { Shippori_Mincho } from "next/font/google";
 import ResponsiveAppBar from "./components/MUIheader/MUIheader";
 import Footer from "./components/footer/Footer";
 
-const ShipporiMincho = Shippori_Mincho({ weight: "400", subsets: ["latin"] });
 export const metadata = {
     title: "焼肉 はたがや",
     description: "焼肉はたがや　ホームページ",

@@ -15,6 +15,7 @@ const Section = () => {
                     height={33}
                     alt="logo"
                     className={styles.image}
+                    quality={100}
                 ></Image>
                 <div className={styles.textBox}>
                     <h2 className={styles.title}>団体様でのご利用</h2>
@@ -30,6 +31,8 @@ const Section = () => {
                     height={33}
                     alt="logo"
                     className={styles.image}
+                    quality={100}
+
                 ></Image>
                 <div className={styles.textBox}>
                     <h2 className={styles.title}>半個室</h2>
@@ -45,6 +48,8 @@ const Section = () => {
                     height={33}
                     alt="logo"
                     className={styles.image}
+                    quality={100}
+
                 ></Image>
                 <div className={styles.textBox}>
                     <h2 className={styles.title}>お子様向けメニュー</h2>

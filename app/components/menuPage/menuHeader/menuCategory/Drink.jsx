@@ -26,7 +26,7 @@ const Drink = ({ data }) => {
     const softDrink = data["ソフトドリンク"];
     const wine = data["ワイン"];
     const menuList = [
-        { data: drink, name: "ドリンク" },
+        { data: drink, name: "アルコール" },
         { data: softDrink, name: "ソフトドリンク" },
         { data: wine, name: "ワイン" },
     ];
