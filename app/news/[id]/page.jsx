@@ -18,11 +18,13 @@ async function generateStaticParams() {
     return [...paths];
 }
 
+export const revalidate = 3600;
 
 export default  function StaticDetailPage({ params }) {
     const postId = params.id;
     const post = use(getDetail(postId));
     // const post = await getDetail(postId);
+    console.log(post)
 
 
     if (!post) {
@@ -38,7 +40,7 @@ export default  function StaticDetailPage({ params }) {
             <div className={styles.container}>
                 <div className={styles.contentsBox}>
                     <h2 className={styles.title}>{post.title}</h2>
-                    <p>{cutString(post.createdAt, 10)}</p>
+                    <p>{cutString(post.dateTime, 10)}</p>
                     <Image
                         src={post.image.url}
                         width={100}

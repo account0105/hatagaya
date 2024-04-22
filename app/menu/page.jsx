@@ -7,8 +7,9 @@ import "./css/embla.css";
 import "./css/style.css";
 
 
-export default function Page({ params, searchParams }) {
+export default function Page({  searchParams }) {
     const data = use(getList());
+    
 
     function categorizeItems(items) {
         const categorizedObject = {};
@@ -17,19 +18,18 @@ export default function Page({ params, searchParams }) {
         items.forEach((item) => {
             const categoryName = item.category.category; // カテゴリー名を取得
             if (!categorizedObject[categoryName]) {
-                categorizedObject[categoryName] = []; // カテゴリーがまだオブジェクトになければ、配列を初期化
+                categorizedObject[categoryName] = []; // カテゴリーがまだオブジェクトになければ配列を初期化
             }
             categorizedObject[categoryName].push(item); // アイテムをカテゴリーの配列に追加
         });
 
         Object.keys(categorizedObject).forEach((category) => {
-            // 各カテゴリー内のアイテムをソート
             sortedObj[category] = categorizedObject[category].sort((a, b) => {
-                // aにimageがあり、bにはない場合、aを前に
+                // aにimageがあってbにはない場合、aを前にする
                 if (a.image && !b.image) {
                     return -1;
                 }
-                // bにimageがあり、aにはない場合、bを前に
+                // bにimageがあってaにはない場合、bを前にする
                 if (b.image && !a.image) {
                     return 1;
                 }
