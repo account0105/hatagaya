@@ -6,7 +6,7 @@ import "./css/base.css";
 import "./css/embla.css";
 import "./css/style.css";
 
-// export const revalidate = 3600;
+export const revalidate = 3600;
 
 export default function Page({ params, searchParams }) {
     const data = use(getList());

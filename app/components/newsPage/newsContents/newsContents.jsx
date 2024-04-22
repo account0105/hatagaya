@@ -12,7 +12,7 @@ import { getList } from "../../../libs/microcms";
 import sanitizeHtml from "sanitize-html";
 import { use } from "react";
 
-// export const revalidate = 3600;
+export const revalidate = 3600;
 
 export default function NewsContents() {
 

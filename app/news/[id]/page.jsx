@@ -18,7 +18,7 @@ async function generateStaticParams() {
     return [...paths];
 }
 
-// export const revalidate = 3600;
+export const revalidate = 3600;
 
 export default  function StaticDetailPage({ params }) {
     const postId = params.id;
