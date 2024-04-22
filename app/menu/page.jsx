@@ -1,4 +1,4 @@
-import React, {  use } from "react";
+import React, { Suspense, use } from "react";
 import { getList } from "../libs/menu_cms";
 import MenuList from "../components/menuPage/menuHeader/MenuList";
 import Recommend from "../components/menuPage/menuHeader/recommend/Reccomend";
@@ -6,8 +6,7 @@ import "./css/base.css";
 import "./css/embla.css";
 import "./css/style.css";
 
-
-export const revalidate = 0;
+export const revalidate = 3600;
 
 export default function Page({ params, searchParams }) {
     const data = use(getList());
@@ -51,7 +50,18 @@ export default function Page({ params, searchParams }) {
         <>
             <div className="container">
                 <div className="title">メニュー</div>
-              
+                {/* <Suspense
+                    fallback={
+                        <div
+                            style={{
+                                margin: "100px 0 0 200px",
+                                fontSize: "20px",
+                            }}
+                        >
+                            loading
+                        </div>
+                    }
+                > */}
                     {searchParams.name ? (
                         <MenuList data={menuList} params={searchParams} />
                     ) : (
@@ -62,6 +72,7 @@ export default function Page({ params, searchParams }) {
                     ) : (
                         <MenuList data={menuList} params={searchParams} />
                     )}
+                {/* </Suspense> */}
             </div>
         </>
     );

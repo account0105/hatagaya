@@ -15,8 +15,8 @@ async function generateStaticParams() {
 
     return [...paths];
 }
+export const revalidate = 3600;
 
-// 静的詳細ページのコンポーネント
 export default async function StaticDetailPage({ params }) {
     const postId = params.id;
     const post = await getDetail(postId);
@@ -35,21 +35,21 @@ export default async function StaticDetailPage({ params }) {
         <div>
             <div className={styles.container}>
                 <div className={styles.contentsBox}>
-                        <h2 className={styles.title}>{post.title}</h2>
-                        <p>{cutString(post.createdAt, 10)}</p>
-                        <Image
-                            src={post.image.url}
-                            width={100}
-                            height={100}
-                            alt="blogImage"
-                            className={styles.image}
-                        ></Image>
-                        <div
-                            dangerouslySetInnerHTML={{
-                                __html: sanitizeHtml(post.text),
-                            }}
-                            className={styles.text}
-                        ></div>
+                    <h2 className={styles.title}>{post.title}</h2>
+                    <p>{cutString(post.createdAt, 10)}</p>
+                    <Image
+                        src={post.image.url}
+                        width={100}
+                        height={100}
+                        alt="blogImage"
+                        className={styles.image}
+                    ></Image>
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: sanitizeHtml(post.text),
+                        }}
+                        className={styles.text}
+                    ></div>
                 </div>
             </div>
         </div>
