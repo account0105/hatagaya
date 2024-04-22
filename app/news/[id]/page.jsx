@@ -3,6 +3,8 @@ import { getDetail, getList } from "../../libs/microcms";
 import Image from "next/image";
 import sanitizeHtml from "sanitize-html";
 import styles from "./page.module.css";
+import { use ,} from "react";
+
 
 async function generateStaticParams() {
     const { contents } = await getList();
@@ -15,13 +17,14 @@ async function generateStaticParams() {
 
     return [...paths];
 }
-export const revalidate = 3600;
 
-export default async function StaticDetailPage({ params }) {
+// export const revalidate = 3600;
+
+export default  function StaticDetailPage({ params }) {
     const postId = params.id;
-    const post = await getDetail(postId);
+    const post = use(getDetail(postId));
+    // const post = await getDetail(postId);
 
-    const time = new Date().toLocaleString();
 
     if (!post) {
         notFound();
