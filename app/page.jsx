@@ -1,17 +1,25 @@
 import Section from "./components/topPage/section/Section";
-import ResponsiveAppBar from "./components/MUIheader/MUIheader";
 import MenuSlider from "./components/topPage/menu_slider/MenuSlider";
 import SlideShow from "./components/topPage/commitment/SlideShow";
 import Map from "./components/map/Map";
 import Recommend from "./components/menuPage/menuHeader/recommend/Reccomend";
+import TopNews from "./components/topPage/topNews/TopNews";
+
 import { Suspense, use } from "react";
-import { getList } from "./libs/menu_cms";
+import { getMenuList } from "./libs/menu_cms";
+import { getList } from "./libs/microcms";
 import "./menu/css/base.css";
 import "./menu/css/style.css";
 import "./menu/css/embla.css";
 
 export default function Home() {
-    const data = use(getList());
+    const data = use(getMenuList());
+
+    const contents = use(getList());
+    const newsData = contents.contents;
+
+    const NEWSOPTIONS = { dragFree: true };
+    const NEWSSLIDES = newsData;
 
     function categorizeItems(items) {
         const categorizedObject = {};
@@ -60,6 +68,7 @@ export default function Home() {
                 <MenuSlider />
                 <Section />
                 <Map />
+                <TopNews data={newsData} slides={NEWSSLIDES} options={NEWSOPTIONS} />
             </div>
         </>
     );

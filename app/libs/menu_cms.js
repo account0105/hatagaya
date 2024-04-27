@@ -16,7 +16,7 @@ const client = createClient({
 });
 
 // ブログ一覧を取得する関数
-const getList = async (queries) => {
+const getMenuList = async (queries) => {
     const listData = await client.getAllContents({
         endpoint: "menu",
         queries,
@@ -32,4 +32,4 @@ const getList = async (queries) => {
 
 // モジュールとしてエクスポート
 
-export { client, getList };
+export { client, getMenuList };

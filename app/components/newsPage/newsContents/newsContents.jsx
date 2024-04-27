@@ -55,7 +55,6 @@ export default function NewsContents() {
                             <CardMedia
                                 sx={{ height: 140 }}
                                 image={data.image.url}
-                                title="green iguana"
                             />
                             <CardContent>
                                 <Typography
@@ -80,10 +79,10 @@ export default function NewsContents() {
                                     <div
                                         dangerouslySetInnerHTML={{
                                             __html: sanitizeHtml(
-                                                data.text.length > 45
+                                                data.text.length > 40
                                                     ? data.text.substring(
                                                           0,
-                                                          45
+                                                          40
                                                       ) + "...."
                                                     : data.text
                                             ),

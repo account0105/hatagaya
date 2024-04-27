@@ -24,7 +24,6 @@ export default  function StaticDetailPage({ params }) {
     const postId = params.id;
     const post = use(getDetail(postId));
     // const post = await getDetail(postId);
-    console.log(post)
 
 
     if (!post) {

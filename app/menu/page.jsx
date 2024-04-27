@@ -1,5 +1,5 @@
 import React, { Suspense, use } from "react";
-import { getList } from "../libs/menu_cms";
+import { getMenuList } from "../libs/menu_cms";
 import MenuList from "../components/menuPage/menuHeader/MenuList";
 import Recommend from "../components/menuPage/menuHeader/recommend/Reccomend";
 import "./css/base.css";
@@ -8,7 +8,7 @@ import "./css/style.css";
 
 
 export default function Page({  searchParams }) {
-    const data = use(getList());
+    const data = use(getMenuList());
     
 
     function categorizeItems(items) {
