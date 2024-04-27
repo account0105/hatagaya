@@ -8,14 +8,9 @@ import {
     Grid,
     Typography,
 } from "@mui/material";
-import { getList } from "../../../libs/microcms";
 import sanitizeHtml from "sanitize-html";
-import { use } from "react";
 
-
-export default function NewsContents() {
-
-    const contents = use(getList());
+export default function NewsContents({ contents }) {
     const data = contents.contents;
 
     return (
@@ -24,8 +19,8 @@ export default function NewsContents() {
                 sx={{
                     fontFamily: "Shippori Mincho, serif",
                     fontSize: { xs: "20px", sm: "22px", md: "26px" },
-                    marginBottom:"40px",
-                    fontWeight:"100"
+                    marginBottom: "40px",
+                    fontWeight: "100",
                 }}
             >
                 お知らせ一覧

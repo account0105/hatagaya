@@ -12,7 +12,6 @@ import { use } from "react";
 
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { NextButton, PrevButton, usePrevNextButtons } from "./Test";
 const TopNews = (props) => {
     const { slides, options} = props;
     const [emblaRef, emblaApi] = useEmblaCarousel(options);
