@@ -6,14 +6,8 @@ import "./style.css";
 
 import {
     Box,
-    Card,
-    CardContent,
-    CardMedia,
     Divider,
     Grid,
-    List,
-    ListItem,
-    ListItemText,
     Typography,
 } from "@mui/material";
 

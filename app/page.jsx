@@ -12,8 +12,18 @@ import "./menu/css/base.css";
 import "./menu/css/style.css";
 import "./menu/css/embla.css";
 
+// interface Item{
+//     category:{
+//         category:string;
+//     }
+//     image?:string;
+// }
+
+
+
 export default function Home() {
     const data = use(getMenuList());
+
 
     const contents = use(getList());
     const newsData = contents.contents;

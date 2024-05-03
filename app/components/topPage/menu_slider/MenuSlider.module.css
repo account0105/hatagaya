@@ -32,7 +32,7 @@
 .caption {
     font-weight: 100;
     width: 80%;
-    font-size: 20px;
+    font-size: 26px;
     display: block;
     margin: 0 auto;
     padding-bottom: 28px;
@@ -47,13 +47,13 @@
     display: flex;
     text-decoration: none;
     font-weight: 100;
-    font-size: 16px;
+    font-size: 18px;
     padding: 0 0 7px 3px;
 }
 
 @media screen and (min-width: 780px) {
     .caption {
-        font-size: 24px;
+        font-size: 28px;
         padding: 50px 0 60px 0;
     }
     .menu_title {

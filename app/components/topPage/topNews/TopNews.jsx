@@ -13,10 +13,9 @@ import { use } from "react";
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 const TopNews = (props) => {
-    const { slides, options} = props;
+    const { slides, options } = props;
     const [emblaRef, emblaApi] = useEmblaCarousel(options);
     const [scrollProgress, setScrollProgress] = useState(0);
-
 
     const onScroll = useCallback((emblaApi) => {
         const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
@@ -35,13 +34,10 @@ const TopNews = (props) => {
         <div>
             <div className="news_embla">
                 <Typography
+                variant="h1"
                     sx={{
                         fontFamily: "Shippori Mincho, serif",
-                        fontSize: {
-                            xs: "22px",
-                            sm: "22px",
-                            md: "26px",
-                        },
+                      
                         m: "15px 0 0 15px",
                         fontWeight: "100",
                     }}
@@ -80,30 +76,14 @@ const TopNews = (props) => {
                                             <CardContent>
                                                 <Typography
                                                     gutterBottom
-                                                    variant="p"
-                                                    component="h2"
+                                                    variant="h2"
                                                     sx={{
-                                                        fontWeight: "200",
-                                                        fontSize: {
-                                                            xs: "16px",
-                                                            sm: "22px",
-                                                        },
+                                                        margin: "0 0 10px 0",
                                                     }}
                                                 >
                                                     {data.title}
                                                 </Typography>
-                                                <Typography
-                                                    variant="div"
-                                                    color="text.secondary"
-                                                    sx={{
-                                                        color: "black",
-                                                        fontSize: {
-                                                            xs: 14,
-                                                            sm: 16,
-                                                        },
-                                                        fontWeight:"200"
-                                                    }}
-                                                >
+                                                <Typography variant="p">
                                                     <div
                                                         dangerouslySetInnerHTML={{
                                                             __html: sanitizeHtml(
@@ -116,6 +96,9 @@ const TopNews = (props) => {
                                                                     : data.text
                                                             ),
                                                         }}
+                                                        style={{
+                                                            fontWeight: "100",
+                                                        }}
                                                     ></div>
                                                 </Typography>
                                             </CardContent>
@@ -126,9 +109,9 @@ const TopNews = (props) => {
                                                         position: "absolute",
                                                         bottom: 0,
                                                         fontSize: {
-                                                            xs: 16,
-                                                            sm: 16,
-                                                            md: 18,
+                                                            xs: 14,
+                                                            sm: 14,
+                                                            md: 14,
                                                         },
                                                         fontFamily:
                                                             "Shippori Mincho, serif",

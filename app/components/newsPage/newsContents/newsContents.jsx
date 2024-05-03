@@ -16,11 +16,9 @@ export default function NewsContents({ contents }) {
     return (
         <div style={{ padding: "95px 0 0 0", margin: "0 auto", width: "80%" }}>
             <Typography
+                variant="h1"
                 sx={{
-                    fontFamily: "Shippori Mincho, serif",
-                    fontSize: { xs: "20px", sm: "22px", md: "26px" },
                     marginBottom: "40px",
-                    fontWeight: "100",
                 }}
             >
                 お知らせ一覧
@@ -54,22 +52,13 @@ export default function NewsContents({ contents }) {
                             <CardContent>
                                 <Typography
                                     gutterBottom
-                                    variant="p"
-                                    component="h2"
-                                    sx={{
-                                        fontWeight: "200",
-                                        fontSize: { xs: "16px", sm: "22px" },
-                                    }}
+                                    variant="h2"
+                                    
                                 >
                                     {data.title}
                                 </Typography>
                                 <Typography
-                                    variant="div"
-                                    color="text.secondary"
-                                    sx={{
-                                        color: "black",
-                                        fontSize: { xs: 14, sm: 16 },
-                                    }}
+                                    variant="p"
                                 >
                                     <div
                                         dangerouslySetInnerHTML={{

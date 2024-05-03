@@ -47,9 +47,9 @@ const Recommend = (props) => {
                                                 className="slide__image"
                                             />
                                         </div>
-                                        <p className="slide_title">
+                                        <h2 className="slide_title">
                                             {item.title}
-                                        </p>
+                                        </h2>
                                         <p className="slide_price">{`￥${price}`}</p>
                                         <div
                                             dangerouslySetInnerHTML={{

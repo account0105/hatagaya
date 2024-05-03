@@ -4,6 +4,7 @@ import Image from "next/image";
 import sanitizeHtml from "sanitize-html";
 import styles from "./page.module.css";
 import { use ,} from "react";
+import { Typography } from "@mui/material";
 
 
 async function generateStaticParams() {
@@ -38,8 +39,8 @@ export default  function StaticDetailPage({ params }) {
         <div>
             <div className={styles.container}>
                 <div className={styles.contentsBox}>
-                    <h2 className={styles.title}>{post.title}</h2>
-                    <p>{cutString(post.dateTime, 10)}</p>
+                    <Typography variant="h1" className={styles.title}>{post.title}</Typography>
+                    <Typography variant="h3">{cutString(post.dateTime, 10)}</Typography>
                     <Image
                         src={post.image.url}
                         width={100}

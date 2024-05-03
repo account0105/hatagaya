@@ -1,11 +1,9 @@
-import { Box, Divider, Grid } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import styles from"./style.module.css";
+import styles from "./style.module.css";
 
 const Imfomation = () => {
-
-
     return (
         <div style={{ width: "100%" }}>
             <div className={styles.informationBox}>
@@ -16,7 +14,6 @@ const Imfomation = () => {
                         alt="image"
                         src="/image/logo-removebg.png"
                         className={styles.image}
-
                     />
                     <h1 className="text">焼肉　はたがや</h1>
                 </div>
@@ -28,56 +25,69 @@ const Imfomation = () => {
                         columns={{ xs: 4, sm: 8 }}
                         sx={{
                             width: "100%",
-                            padding: "22px",
+                            padding: { xs: "22px", sm: "30px", md: "40px" },
                             maxWidth: "1300px",
                             fontSize: { xs: "12px", sm: "14px", md: "20px" },
                         }}
                     >
                         <Grid item xs={2} sm={4}>
-                            <p>住所</p>
+                            <Typography variant="p">住所</Typography>
                         </Grid>
                         <Grid item xs={2} sm={4}>
-                            <p>
+                            <Typography variant="p">
                                 〒151- 0072　 東京都渋谷区幡ヶ谷1-2-8
                                 スカイマンション幡ヶ谷林ビル1F
-                            </p>
+                            </Typography>
                         </Grid>
-                        <Grid item xs={2} sm={4}>
-                            <p>電話番号</p>
-                        </Grid>
-                        <Grid item xs={2} sm={4}>
-                            <p>03-5333-2410</p>
-                        </Grid>
-                        <Grid item xs={2} sm={4}>
-                            <p>営業時間</p>
-                        </Grid>
-                        <Grid item xs={2} sm={4}>
-                            <p>ランチ</p>
-                            <p> 11:30 ～ 14:00 ( L.O 13:30)</p>
 
-                            <p>ディナー</p>
-                            <p> 17:00 ～ 23:00 ( L.O 22:30)</p>
+                        <Divider
+                       
+                        />
+                        <Grid item xs={2} sm={4}>
+                            <Typography variant="p">電話番号</Typography>
                         </Grid>
                         <Grid item xs={2} sm={4}>
-                            <p>定休日</p>
+                            <Typography variant="p">03-5333-2410</Typography>
                         </Grid>
                         <Grid item xs={2} sm={4}>
-                            <p>年末年始</p>
-                            <p>詳細はお知らせをご覧ください</p>
+                            <Typography variant="p">営業時間</Typography>
                         </Grid>
                         <Grid item xs={2} sm={4}>
-                            <p>決済方法</p>
+                            <Typography variant="p">ランチ</Typography>
+                            <br></br>
+                            <Typography variant="p">
+                                11:30 ～ 14:00 ( L.O 13:30)
+                            </Typography>
+                            <br></br>
+
+                            <Typography variant="p">ディナー</Typography>
+                            <br></br>
+                            <Typography variant="p">
+                                17:00 ～ 23:00 ( L.O 22:30)
+                            </Typography>
                         </Grid>
                         <Grid item xs={2} sm={4}>
-                            <p>スマレジ対応</p>
+                            <Typography variant="p">定休日</Typography>
                         </Grid>
                         <Grid item xs={2} sm={4}>
-                            <p>備考</p>
+                            <Typography variant="p">年末年始</Typography>
+                            <Typography variant="p">
+                                詳細はお知らせをご覧ください
+                            </Typography>
                         </Grid>
                         <Grid item xs={2} sm={4}>
-                            <p>席数8</p>
-                            <p>禁煙</p>
-                            <p>半個室あり</p>
+                            <Typography variant="p">決済方法</Typography>
+                        </Grid>
+                        <Grid item xs={2} sm={4}>
+                            <Typography variant="p">スマレジ対応</Typography>
+                        </Grid>
+                        <Grid item xs={2} sm={4}>
+                            <Typography variant="p">備考</Typography>
+                        </Grid>
+                        <Grid item xs={2} sm={4}>
+                            <Typography variant="p">席数8</Typography>
+                            <Typography variant="p">禁煙</Typography>
+                            <Typography variant="p">半個室あり</Typography>
                         </Grid>
                     </Grid>
                 </div>
