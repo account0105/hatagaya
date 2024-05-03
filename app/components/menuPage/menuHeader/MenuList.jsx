@@ -79,15 +79,7 @@ const MenuHeader = ({ data, params }) => {
                                     <AccordionSummary
                                         expandIcon={
                                             <ExpandMoreIcon
-                                                sx={{
-                                                    fontSize: {
-                                                        xs: "20px",
-                                                        sm: "25px",
-                                                        md: "30px",
-                                                    },
-
-
-                                                }}
+                                           
                                             />
                                         }
                                         aria-controls="panel1-content"
@@ -118,15 +110,7 @@ const MenuHeader = ({ data, params }) => {
                                     <AccordionSummary
                                         expandIcon={
                                             <ExpandMoreIcon
-                                                sx={{
-                                                    fontSize: {
-                                                        xs: "20px",
-                                                        sm: "25px",
-                                                        md: "30px",
-
-                                                    },
-
-                                                }}
+                                            
                                             />
                                         }
                                         aria-controls="panel1-content"

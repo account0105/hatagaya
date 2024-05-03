@@ -52,7 +52,7 @@ export default function MenuSlider() {
     return (
         <div className={styles.MenuSliderParent}>
             <div className={styles.MenuSlideWrapper}>
-                <h4 className={styles.caption}>メニュー</h4>
+                <h1 className={styles.caption}>メニュー</h1>
                 <Swiper
                     modules={[Navigation, Pagination, FreeMode]}
                     breakpoints={slideSettings}

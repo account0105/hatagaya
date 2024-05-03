@@ -170,15 +170,18 @@ function ResponsiveAppBar() {
                                 <MenuItem
                                     key={index}
                                     onClick={handleCloseNavMenu}
+                                    sx={{minWidth:"152px"}}
                                 >
                                     <Link href={page.path}>
                                         <Typography
-                                            textAlign="center"
+                                            variant="h3"
+                                           
                                             sx={{
-                                                fontFamily:
-                                                    "Shippori Mincho, serif",
-                                                fontSize: "20px",
                                                 padding: "5px 20px",
+                                                "&:hover": {
+                                                    transform: `scale(1.1)`,
+                                                    transition: "0.2s",
+                                                },
                                             }}
                                         >
                                             {page.name}
@@ -194,16 +197,21 @@ function ResponsiveAppBar() {
                                     aria-expanded={open ? "true" : undefined}
                                     onClick={handleClick}
                                     sx={{
-                                        fontFamily: "Shippori Mincho, serif",
-                                        fontSize: "22px",
-                                        padding: "5px 20px",
+                                        fontSize: "16px",
+                                        padding: "5px 0 5px 0",
+                                        width:"100%",
+                                        textAlign:"center",
                                         color: "white",
-                                        fontWeight: "400",
+                                        "&:hover": {
+                                            transform: `scale(1.1)`,
+                                            transition: "0.2s",
+                                            backgroundColor:"#1d1d1d"
+                                        },
                                     }}
                                 >
                                     コミュニティ
                                 </Button>
-                                <Menu
+                                {/* <Menu
                                     id="mobMenu"
                                     anchorEl={anchorEl}
                                     open={open}
@@ -226,17 +234,17 @@ function ResponsiveAppBar() {
                                             sx={{
                                                 padding: "20px 20px 10px 20px",
                                                 borderRadius: "10px",
+                                                "&:hover": {
+                                                    transform: `scale(1.1)`,
+                                                    transition: "0.2s",
+                                                },
                                             }}
                                         >
                                             <Link href={data.url} passHref>
                                                 <Typography
                                                     sx={{
-                                                        "&:hover": {
-                                                            transform: `scale(1.1)`,
-                                                            transition: "0.2s",
-                                                        },
+                                                        
                                                         fontSize: "10px",
-                                                        fontFamily: `"Shippori Mincho", serif`,
                                                     }}
                                                 >
                                                     {data.name}
@@ -244,11 +252,11 @@ function ResponsiveAppBar() {
                                             </Link>
                                         </MenuItem>
                                     ))}
-                                </Menu>
+                                </Menu> */}
                             </div>
                         </Menu>
                     </Box>
-                    {/* スマホアイコン */}{" "}
+                    {/* スマホアイコン */}
                     <Link href="/" passHref>
                         <Typography
                             noWrap
@@ -295,12 +303,7 @@ function ResponsiveAppBar() {
                             >
                                 <Link href={page.path}>
                                     <Typography
-                                        sx={{
-                                            fontFamily:
-                                                "Shippori Mincho, serif",
-                                            fontSize: "18px",
-                                            fontWeight: "300",
-                                        }}
+                                    variant="h3"
                                     >
                                         {page.name}
                                     </Typography>
@@ -316,7 +319,6 @@ function ResponsiveAppBar() {
                                 onClick={handleClick}
                                 sx={{
                                     color: "white",
-                                    fontFamily: "Shippori Mincho, serif",
                                     fontSize: "18px",
                                     fontWeight: "300",
                                 }}
@@ -350,13 +352,12 @@ function ResponsiveAppBar() {
                                     >
                                         <Link href={data.url} passHref>
                                             <Typography
+                                            variant="h3"
                                                 sx={{
                                                     "&:hover": {
                                                         transform: `scale(1.1)`,
                                                         transition: "0.2s",
                                                     },
-                                                    fontSize: "18px",
-                                                    fontFamily: `"Shippori Mincho", serif`,
                                                 }}
                                             >
                                                 {data.name}

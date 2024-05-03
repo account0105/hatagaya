@@ -2,7 +2,7 @@
     margin: 0 0 50px 0;
 }
 .recommend_title {
-    font-size: 22px;
+    font-size: 26px;
     margin: 10px 0 0 10px;
     font-weight: "100";
 }
@@ -45,18 +45,18 @@
 }
 
 .slide_title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 100;
 }
 
 .slide_price {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 100;
     margin: 10px 0;
 }
 
 .slide_text {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 100;
 }
 
@@ -161,7 +161,7 @@
     margin: 0 auto;
     --slide-height: auto;
     --slide-spacing: 1rem;
-    --slide-size: 80%;
+    --slide-size: 92%;
     background-color: #1d1d1d;
 }
 
@@ -221,7 +221,7 @@
 
 @media screen and (min-width: 480px) {
     .recommend_title {
-        font-size: 28px;
+        font-size: 32px;
     }
     .embla {
         padding: 55px 75px;
@@ -236,7 +236,7 @@
     }
 
     .slide_price {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .slide_text {
