@@ -96,6 +96,7 @@ export default function MenuSlider() {
                                     <Link
                                         href={{
                                             pathname: `/menu`,
+                                            query: { name: src.name }
                                         }}
                                         className={styles.menu_title_link}
                                     >
