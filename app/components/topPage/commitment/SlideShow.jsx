@@ -50,7 +50,7 @@ export default function SlideShow() {
                     <SwiperSlide key={index}>
                         <Image
                             src={src}
-                            width={1920}
+                            width={1000}
                             height={900}
                             alt="Slider Image"
                             className={styles.slideImage}
@@ -59,7 +59,7 @@ export default function SlideShow() {
                         />
                         <Image
                             src="/image/logo-removebg.png"
-                            width={120}
+                            width={1000}
                             height={55}
                             alt="logo"
                             href=""

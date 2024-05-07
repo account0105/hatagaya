@@ -10,8 +10,8 @@ const Section = () => {
             <div className={styles.sectionInnerWrap}></div>
             <section className={styles.sectionBox}>
                 <Image
-                    src="/image/section/section1.jpg"
-                    width={100}
+                    src="/image/section/section1.png"
+                    width={1000}
                     height={33}
                     alt="logo"
                     className={styles.image}
@@ -26,9 +26,9 @@ const Section = () => {
             </section>
             <section className={styles.sectionBox}>
                 <Image
-                    src="/image/section/section2.jpg"
-                    width={100}
-                    height={33}
+                    src="/image/section/section2.png"
+                    width={1000}
+                    height={330}
                     alt="logo"
                     className={styles.image}
                     quality={100}
@@ -43,9 +43,9 @@ const Section = () => {
             </section>
             <section className={styles.sectionBox}>
                 <Image
-                    src="/image/section/section3.jpg"
-                    width={100}
-                    height={33}
+                    src="/image/section/section3.png"
+                    width={1000}
+                    height={1000}
                     alt="logo"
                     className={styles.image}
                     quality={100}

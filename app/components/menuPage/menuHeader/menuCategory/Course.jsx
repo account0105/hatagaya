@@ -30,7 +30,7 @@ const Course = ({ data }) => {
                                     <Image
                                         src={item.image.url}
                                         alt="image"
-                                        width={300}
+                                        width={1000}
                                         height={100}
                                         className={styles.image}
                                     />
