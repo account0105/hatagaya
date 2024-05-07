@@ -41,7 +41,7 @@ const Recommend = (props) => {
                                         <div className="slide__image__box">
                                             <Image
                                                 src={item.image.url}
-                                                width={200}
+                                                width={1000}
                                                 height={120}
                                                 alt={item.title}
                                                 className="slide__image"

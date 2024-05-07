@@ -174,8 +174,8 @@ function ResponsiveAppBar() {
                         >
                             <Image
                                 src="/image/mobile-logo-removebg.png"
-                                width={35}
-                                height={35}
+                                width={45}
+                                height={45}
                                 alt="logo"
                                 property="true"
                             ></Image>
@@ -197,7 +197,7 @@ function ResponsiveAppBar() {
                             color="inherit"
                             sx={{ width: "60px", height: "60px" }}
                         >
-                            <MenuIcon sx={{ width: "60px", height: "30px" }} />
+                            <MenuIcon sx={{ width: "60px", height: "35px" }} />
                         </IconButton>
                         <Menu
                             id="menu-appbar"
@@ -327,9 +327,10 @@ function ResponsiveAppBar() {
                         >
                             <Image
                                 src="/image/mobile-logo-removebg.png"
-                                width={35}
-                                height={35}
+                                width={40}
+                                height={40}
                                 alt="logo"
+
                             ></Image>
                         </Typography>
                     </Link>
@@ -348,7 +349,7 @@ function ResponsiveAppBar() {
                         componentsProps={{
                             tooltip: {
                                 sx: {
-                                    fontSize: "1.75rem", // Adjust the font size to your needs
+                                    fontSize: "1.5rem", // Adjust the font size to your needs
                                     padding: "10px",
                                 },
                             },
@@ -378,7 +379,7 @@ function ResponsiveAppBar() {
                             aria-expanded={openReservation ? "true" : undefined}
                         >
                             <EventAvailableIcon
-                                sx={{ width: "60px", height: "30px" }}
+                                sx={{ width: "60px", height: "36px" }}
                             />
                         </IconButton>
                     </Tooltip>
@@ -481,7 +482,7 @@ function ResponsiveAppBar() {
                             sx={{
                                 display: { xs: "none", sm: "flex" },
                                 position: "fixed",
-                                top: 10,
+                                top: 13,
                                 right: { sm: 10, md: 40, lg: 80 },
                                 zIndex: 10,
                             }}
@@ -521,7 +522,7 @@ function ResponsiveAppBar() {
                                 }
                             >
                                 <EventAvailableIcon
-                                    sx={{ width: "60px", height: "30px" }}
+                                    sx={{ width: "60px", height: "36px" }}
                                 />
                             </IconButton>
                         </Tooltip>

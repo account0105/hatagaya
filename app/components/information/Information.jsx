@@ -9,7 +9,7 @@ const Imfomation = () => {
             <div className={styles.informationBox}>
                 <div className={styles.title}>
                     <Image
-                        width={150}
+                        width={1000}
                         height={100}
                         alt="image"
                         src="/image/logo-removebg.png"

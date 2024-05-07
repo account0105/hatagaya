@@ -43,7 +43,7 @@ export default  function StaticDetailPage({ params }) {
                     <Typography variant="h3">{cutString(post.dateTime, 10)}</Typography>
                     <Image
                         src={post.image.url}
-                        width={100}
+                        width={1000}
                         height={100}
                         alt="blogImage"
                         className={styles.image}

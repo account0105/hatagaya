@@ -12,7 +12,7 @@ const Footer = () => {
                         <Image
                             src="/image/logo-removebg.png"
                             alt="footer-image"
-                            width={100}
+                            width={1000}
                             height={100}
                             className={styles.image}
                         />
