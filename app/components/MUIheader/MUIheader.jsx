@@ -3,7 +3,6 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -12,6 +11,16 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Image from "next/image";
 import Link from "next/link";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
+import {
+    Tooltip,
+    IconButton,
+    useMediaQuery,
+    useTheme,
+    Fade,
+} from "@mui/material";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const pages = [
     { name: "メニュー", path: "/menu" },
@@ -23,6 +32,18 @@ const communities = [
         name: "Instagram",
         url: "https://www.instagram.com/yakiniku_hatagaya/",
     },
+
+    {
+        name: "UberEats",
+        url: "https://www.ubereats.com/store/%E7%84%BC%E8%82%89-%E3%81%AF%E3%81%9F%E3%81%8B%E3%82%84-yakiniku-hatagaya/cj5ppEE6Vj6sI01GWBEFUQ?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNSU4OCU5RCVFNSU4RSU5RiUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUp4YXlkcFQtY2lWOFIyenVuVkhWMXhwayUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzOC40MDE4OTA0JTJDJTIybG9uZ2l0dWRlJTIyJTNBMTQxLjA0NzUxNjYlN0Q%3D",
+    },
+    {
+        name: "出前館",
+        url: "https://demae-can.com/shop/menu/3098831",
+    },
+];
+
+const reservation = [
     {
         name: "食べログ",
         url: "https://tabelog.com/tokyo/A1318/A131807/13213734/",
@@ -35,18 +56,36 @@ const communities = [
         name: "一休",
         url: "https://restaurant.ikyu.com/123506",
     },
-    {
-        name: "UberEats",
-        url: "https://www.ubereats.com/store/%E7%84%BC%E8%82%89-%E3%81%AF%E3%81%9F%E3%81%8B%E3%82%84-yakiniku-hatagaya/cj5ppEE6Vj6sI01GWBEFUQ?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNSU4OCU5RCVFNSU4RSU5RiUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUp4YXlkcFQtY2lWOFIyenVuVkhWMXhwayUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzOC40MDE4OTA0JTJDJTIybG9uZ2l0dWRlJTIyJTNBMTQxLjA0NzUxNjYlN0Q%3D",
-    },
-    {
-        name: "出前館",
-        url: "https://demae-can.com/shop/menu/3098831",
-    },
 ];
 
 function ResponsiveAppBar() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    // スマホ予約初期表示
+    const [sxTooltipOpen, setSxTooltipOpen] = useState(false);
+    const [smTooltipOpen, setSmTooltipOpen] = useState(false);
+    const resvIconDisplay = useTheme();
+    const isXs = useMediaQuery(resvIconDisplay.breakpoints.down("sm"));
+
+    useEffect(() => {
+        if (isXs) {
+            // Show the tooltip on initial page mount for xs screen sizes
+            setSxTooltipOpen(true);
+            setSmTooltipOpen(false);
+
+            // Hide the tooltip after 3 seconds
+            const timer = setTimeout(() => {
+                setSxTooltipOpen(false);
+            }, 10000);
+        } else {
+            setSxTooltipOpen(false);
+            setSmTooltipOpen(true);
+            const timer = setTimeout(() => {
+                setSmTooltipOpen(false);
+            }, 10000);
+        }
+    }, [isXs]);
+
+    // スマホメニューリスト
+    const [anchorElNav, setAnchorElNav] = useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -56,14 +95,27 @@ function ResponsiveAppBar() {
         setAnchorElNav(null);
     };
 
-    // コミュニティ
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    // コミュニティリスト
+    const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
+    };
+
+    // 予約リスト
+    const [anchorElReservation, setAnchorElReservation] = useState(null);
+    const openReservation = Boolean(anchorElReservation);
+    const handleClickReservation = (event) => {
+        setAnchorElReservation(event.currentTarget);
+        setSmTooltipOpen(false);
+        setSxTooltipOpen(false);
+    };
+    const handleCloseReservation = () => {
+        setAnchorElReservation(null);
     };
 
     return (
@@ -100,9 +152,13 @@ function ResponsiveAppBar() {
             >
                 <Toolbar
                     disableGutters
-                    sx={{ gap: "5px", display: "flex", alignItems: "center" }}
+                    sx={{
+                        gap: "5px",
+                        display: "flex",
+                        alignItems: "center",
+                    }}
                 >
-                    {/* デスクトップアイコン */}
+                    {/*-----------------------デスクトップアイコン -----------------------------------------------*/}
                     <Link href="/" passHref>
                         <Typography
                             variant="h6"
@@ -125,7 +181,7 @@ function ResponsiveAppBar() {
                             ></Image>
                         </Typography>
                     </Link>
-                    {/* スマホメニューバー */}
+                    {/* --------------------------------スマホメニュー-------------------------------------------*/}
                     <Box
                         sx={{
                             flexGrow: 1,
@@ -170,12 +226,11 @@ function ResponsiveAppBar() {
                                 <MenuItem
                                     key={index}
                                     onClick={handleCloseNavMenu}
-                                    sx={{minWidth:"152px"}}
+                                    sx={{ minWidth: "152px" }}
                                 >
                                     <Link href={page.path}>
                                         <Typography
                                             variant="h3"
-                                           
                                             sx={{
                                                 padding: "5px 20px",
                                                 "&:hover": {
@@ -199,13 +254,13 @@ function ResponsiveAppBar() {
                                     sx={{
                                         fontSize: "16px",
                                         padding: "5px 0 5px 0",
-                                        width:"100%",
-                                        textAlign:"center",
+                                        width: "100%",
+                                        textAlign: "center",
                                         color: "white",
                                         "&:hover": {
                                             transform: `scale(1.1)`,
                                             transition: "0.2s",
-                                            backgroundColor:"#1d1d1d"
+                                            backgroundColor: "#1d1d1d",
                                         },
                                     }}
                                 >
@@ -256,7 +311,7 @@ function ResponsiveAppBar() {
                             </div>
                         </Menu>
                     </Box>
-                    {/* スマホアイコン */}
+                    {/* --------------------------スマホアイコン------------------------------------------------- */}
                     <Link href="/" passHref>
                         <Typography
                             noWrap
@@ -278,7 +333,56 @@ function ResponsiveAppBar() {
                             ></Image>
                         </Typography>
                     </Link>
-                    {/* デスクトップメニューバー */}
+                    {/* ----------------------------スマホ予約---------------------------------------- */}
+                    <Tooltip
+                        arrow
+                        title="予約はこちらから"
+                        sx={{
+                            display: { xs: "flex", sm: "none" },
+                            position: "fixed",
+                            top: 10,
+                            right: 5,
+                            zIndex: 10,
+                        }}
+                        open={sxTooltipOpen}
+                        componentsProps={{
+                            tooltip: {
+                                sx: {
+                                    fontSize: "1.75rem", // Adjust the font size to your needs
+                                    padding: "10px",
+                                },
+                            },
+                        }}
+                        slotProps={{
+                            popper: {
+                                modifiers: [
+                                    {
+                                        name: "offset",
+                                        options: {
+                                            offset: [0, -14],
+                                        },
+                                    },
+                                ],
+                            },
+                        }}
+                        TransitionComponent={Fade}
+                        TransitionProps={{ timeout: 600 }}
+                    >
+                        <IconButton
+                            onClick={handleClickReservation}
+                            size="small"
+                            aria-controls={
+                                openReservation ? "account-menu" : undefined
+                            }
+                            aria-haspopup="true"
+                            aria-expanded={openReservation ? "true" : undefined}
+                        >
+                            <EventAvailableIcon
+                                sx={{ width: "60px", height: "30px" }}
+                            />
+                        </IconButton>
+                    </Tooltip>
+                    {/* -----------------------------デスクトップメニュー------------------------------ */}
                     <Box
                         sx={{
                             flexGrow: 1,
@@ -287,7 +391,7 @@ function ResponsiveAppBar() {
                             "& > :last-child": {
                                 marginRight: "0",
                             },
-                            margin: " 0 0 0 50px",
+                            margin: "0 0 0 50px",
                         }}
                     >
                         {pages.map((page, index) => (
@@ -302,15 +406,18 @@ function ResponsiveAppBar() {
                                 }}
                             >
                                 <Link href={page.path}>
-                                    <Typography
-                                    variant="h3"
-                                    >
+                                    <Typography variant="h3">
                                         {page.name}
                                     </Typography>
                                 </Link>
                             </Button>
                         ))}
-                        <div style={{ display: "flex", alignItems: "center" }}>
+                        <div
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                            }}
+                        >
                             <Button
                                 id="basic-button"
                                 aria-controls={open ? "basic-menu" : undefined}
@@ -352,7 +459,7 @@ function ResponsiveAppBar() {
                                     >
                                         <Link href={data.url} passHref>
                                             <Typography
-                                            variant="h3"
+                                                variant="h3"
                                                 sx={{
                                                     "&:hover": {
                                                         transform: `scale(1.1)`,
@@ -367,6 +474,139 @@ function ResponsiveAppBar() {
                                 ))}
                             </Menu>
                         </div>
+                        {/* ------------------------------デスクトップ予約----------------------- */}
+                        <Tooltip
+                            arrow
+                            title="予約はこちらから"
+                            sx={{
+                                display: { xs: "none", sm: "flex" },
+                                position: "fixed",
+                                top: 10,
+                                right: { sm: 10, md: 40, lg: 80 },
+                                zIndex: 10,
+                            }}
+                            open={smTooltipOpen}
+                            componentsProps={{
+                                tooltip: {
+                                    sx: {
+                                        fontSize: "2rem", // Adjust the font size to your needs
+                                        padding: "10px",
+                                    },
+                                },
+                            }}
+                            slotProps={{
+                                popper: {
+                                    modifiers: [
+                                        {
+                                            name: "offset",
+                                            options: {
+                                                offset: [0, -14],
+                                            },
+                                        },
+                                    ],
+                                },
+                            }}
+                            TransitionComponent={Fade}
+                            TransitionProps={{ timeout: 600 }}
+                        >
+                            <IconButton
+                                onClick={handleClickReservation}
+                                size="small"
+                                aria-controls={
+                                    openReservation ? "account-menu" : undefined
+                                }
+                                aria-haspopup="true"
+                                aria-expanded={
+                                    openReservation ? "true" : undefined
+                                }
+                            >
+                                <EventAvailableIcon
+                                    sx={{ width: "60px", height: "30px" }}
+                                />
+                            </IconButton>
+                        </Tooltip>
+                        <Menu
+                            anchorEl={anchorElReservation}
+                            id="account-menu"
+                            open={openReservation}
+                            onClose={handleCloseReservation}
+                            onClick={handleCloseReservation}
+                            PaperProps={{
+                                elevation: 0,
+                                sx: {
+                                    overflow: "visible",
+                                    filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                                    mt: 1.5,
+                                    "& .MuiAvatar-root": {
+                                        width: 32,
+                                        height: 32,
+                                        ml: -0.5,
+                                        mr: 1,
+                                    },
+                                    "&::before": {
+                                        content: '""',
+                                        display: "block",
+                                        position: "absolute",
+                                        top: 0,
+                                        right: 14,
+                                        width: 10,
+                                        height: 10,
+                                        bgcolor: "background.paper",
+                                        transform:
+                                            "translateY(-50%) rotate(45deg)",
+                                        zIndex: 0,
+                                    },
+                                },
+                            }}
+                            transformOrigin={{
+                                horizontal: "right",
+                                vertical: "top",
+                            }}
+                            anchorOrigin={{
+                                horizontal: "right",
+                                vertical: "bottom",
+                            }}
+                            sx={{
+                                "& .MuiPaper-root": {
+                                    // MUIのPaperコンポーネントにスタイルを適用
+                                    backgroundColor: "#1D1D1D", // ここで背景色を設定
+                                },
+                                "& .MuiPopover-paper": {
+                                    // アンカーを非表示にする
+                                    "&::before": {
+                                        content: "none",
+                                    },
+                                    "&::after": {
+                                        content: "none",
+                                    },
+                                },
+                            }}
+                        >
+                            {reservation.map((data, index) => (
+                                <MenuItem
+                                    onClick={handleClose}
+                                    key={index}
+                                    sx={{
+                                        padding: "20px 20px 10px 20px",
+                                        borderRadius: "10px",
+                                    }}
+                                >
+                                    <Link href={data.url} passHref>
+                                        <Typography
+                                            variant="h3"
+                                            sx={{
+                                                "&:hover": {
+                                                    transform: `scale(1.1)`,
+                                                    transition: "0.2s",
+                                                },
+                                            }}
+                                        >
+                                            {data.name}
+                                        </Typography>
+                                    </Link>
+                                </MenuItem>
+                            ))}
+                        </Menu>
                     </Box>
                 </Toolbar>
             </Container>
